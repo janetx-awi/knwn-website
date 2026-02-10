@@ -61,7 +61,7 @@ export function ContactForm() {
           Booking integration (Upper Hand) will be added once the organization URL is confirmed.
         </p>
         <Button type="submit" className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
-          Start your path
+          Book consult
         </Button>
       </div>
     </form>

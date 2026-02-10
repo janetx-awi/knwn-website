@@ -24,7 +24,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
-            <Link href="/#contact">Start your path</Link>
+            <Link href="/#contact">Book consult</Link>
           </Button>
         </div>
       </div>
