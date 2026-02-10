@@ -29,7 +29,7 @@ export function MediaFrame({
     <>
       <div
         className={cn(
-          "absolute inset-0 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 transition-opacity duration-500",
+          "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-opacity duration-500",
           loaded ? "opacity-0" : "opacity-100",
         )}
         aria-hidden

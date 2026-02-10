@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { MediaFrame } from "@/components/site/media-frame";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Badge } from "@/components/ui/badge";
@@ -8,85 +8,81 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SERVICES } from "@/lib/content";
 
-const SERVICE_IMAGES = [
-  "/images/knwn/service-intensity.webp",
-  "/images/knwn/goal-start.webp",
-  "/images/knwn/hero-action.webp",
-  "/images/knwn/consultation-flow.webp",
-  "/images/knwn/trust-athletes.webp",
-];
-
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-stone-50 text-slate-900">
+    <div className="min-h-screen bg-slate-950 text-white">
       <SiteHeader />
 
-      <main className="mx-auto max-w-6xl px-4 py-16">
-        <div className="space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900">Services</h1>
-          <p className="max-w-2xl text-slate-700">
-            Full program lineup for athletes who want clear progression, premium coaching standards,
-            and next-level performance outcomes.
-          </p>
-          <Button asChild className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
-            <Link href="/#contact">Book consult</Link>
-          </Button>
-        </div>
+      <main className="mx-auto max-w-6xl px-4 py-8 md:py-10">
+        <section className="grid gap-5 md:grid-cols-[1fr_1fr] md:items-center">
+          <div className="space-y-3">
+            <Badge className="rounded-full border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100">
+              KNWN Services
+            </Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">Services</h1>
+            <p className="max-w-xl text-sm text-slate-300 md:text-base">
+              Full service lineup built for athlete progression, confidence under pressure, and
+              college journey support.
+            </p>
+            <Button asChild className="rounded-full bg-white text-black hover:bg-slate-200">
+              <Link href="/contact">Book Consult</Link>
+            </Button>
+          </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {SERVICES.map((service, idx) => (
-            <Card
-              key={service.slug}
-              id={service.slug}
-              className="overflow-hidden border-slate-200 bg-white shadow-sm"
-            >
-              <div className="relative h-44 bg-slate-100">
-                <Image
-                  src={SERVICE_IMAGES[idx % SERVICE_IMAGES.length]}
-                  alt={`${service.title} at KNWN`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+          <Card className="relative h-52 overflow-hidden border-slate-800 bg-slate-900 p-0">
+            <MediaFrame
+              src="/images/knwn/consultation-flow.webp"
+              alt="Athletes and coach during a KNWN training session"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+          </Card>
+        </section>
+
+        <section className="mt-6 grid gap-4 md:grid-cols-2">
+          {SERVICES.map((service) => (
+            <Card key={service.slug} id={service.slug} className="border-slate-800 bg-slate-900/70 p-5">
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="text-xl font-semibold tracking-tight text-white">{service.title}</h2>
+                {service.comingSoon ? (
+                  <Badge className="rounded-full border border-slate-700 bg-slate-800 text-slate-200">
+                    Coming soon
+                  </Badge>
+                ) : null}
               </div>
 
-              <div className="space-y-4 p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-xl font-semibold tracking-tight text-slate-900">{service.title}</div>
-                    <p className="mt-2 text-sm text-slate-700">{service.summary}</p>
-                  </div>
-                  {service.comingSoon ? (
-                    <Badge className="rounded-full bg-slate-100 text-slate-800 hover:bg-slate-100">
-                      Coming soon
-                    </Badge>
-                  ) : null}
-                </div>
+              <p className="text-sm text-slate-300">{service.summary}</p>
 
-                <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-                  <p>
-                    <span className="font-semibold text-slate-900">Best for:</span> {service.bestFor}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-slate-900">Format:</span> {service.format}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-slate-900">Typical cadence:</span> {service.cadence}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-slate-900">Outcome focus:</span> {service.outcome}
-                  </p>
-                </div>
+              <div className="grid gap-2 rounded-xl border border-slate-800 bg-black/40 p-4 text-sm text-slate-300">
+                <p>
+                  <span className="font-semibold text-white">Best for:</span> {service.bestFor}
+                </p>
+                <p>
+                  <span className="font-semibold text-white">Format:</span> {service.format}
+                </p>
+                <p>
+                  <span className="font-semibold text-white">Cadence:</span> {service.cadence}
+                </p>
+                <p>
+                  <span className="font-semibold text-white">Outcome:</span> {service.outcome}
+                </p>
+              </div>
 
-                <div className="mt-5 flex">
-                  <Button asChild className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
-                    <Link href="/#contact">Book consult</Link>
-                  </Button>
-                </div>
+              <div className="flex gap-2">
+                <Button asChild className="rounded-full bg-white text-black hover:bg-slate-200">
+                  <Link href="/contact">Book Consult</Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full border-slate-700 bg-transparent text-white hover:bg-slate-800"
+                >
+                  <Link href={`/services/${service.slug}`}>Details</Link>
+                </Button>
               </div>
             </Card>
           ))}
-        </div>
+        </section>
       </main>
 
       <SiteFooter />
