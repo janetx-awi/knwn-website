@@ -139,13 +139,18 @@ export function ContactForm({ defaultIntent, defaultService }: ContactFormProps)
         />
       </div>
 
-      <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-        <p className="text-xs text-slate-400">
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+        <p className="max-w-sm text-xs text-slate-400">
           We review each inquiry and follow up with next steps based on your selected path.
         </p>
-        <Button type="submit" className="rounded-full bg-white text-black hover:bg-slate-200">
-          Submit Inquiry
-        </Button>
+
+        <div className="flex flex-col items-start gap-2">
+          <Button type="submit" className="rounded-full bg-white text-black hover:bg-slate-200">
+            Submit Inquiry
+          </Button>
+          <p className="text-xs text-slate-300">10 spots left for February</p>
+          <p className="text-xs text-slate-400">Capacity is limited to protect coaching quality.</p>
+        </div>
       </div>
 
       {status === "submitted" ? (

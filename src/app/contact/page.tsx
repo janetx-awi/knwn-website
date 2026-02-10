@@ -21,9 +21,6 @@ const CONTACT_STEPS = [
   "You receive next steps for scheduling or direct follow-up.",
 ];
 
-const MONTHLY_CONSULT_LIMIT = 10;
-const SPOTS_REMAINING = 10;
-
 const VALID_INTENTS = new Set(["book-consultation", "learn-more-about"]);
 const VALID_SERVICES = new Set(SERVICES.map((service) => service.slug));
 
@@ -32,13 +29,6 @@ export default function ContactPage({
 }: {
   searchParams: { intent?: string; service?: string };
 }) {
-  const now = new Date();
-  const month = now.toLocaleString("en-US", { month: "long" });
-  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1).toLocaleString("en-US", {
-    month: "long",
-  });
-  const allSpotsReserved = SPOTS_REMAINING <= 0;
-
   const defaultIntent = searchParams.intent && VALID_INTENTS.has(searchParams.intent)
     ? searchParams.intent
     : undefined;
@@ -65,30 +55,6 @@ export default function ContactPage({
             <p className="max-w-xl text-sm text-slate-300 md:text-base">
               Short form. Clear next steps. Premium support for athletes and families.
             </p>
-
-            <Card className="border-slate-800 bg-slate-900/75 p-5">
-              <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                Remaining consultation spots this month
-              </p>
-
-              {allSpotsReserved ? (
-                <>
-                  <p className="mt-2 text-2xl font-semibold text-white">
-                    All spots reserved for {month}. Reach out to get on the list.
-                  </p>
-                  <p className="mt-2 text-sm text-slate-300">Next available consultation — {nextMonth}</p>
-                </>
-              ) : (
-                <>
-                  <p className="mt-2 text-4xl font-bold text-white">
-                    {SPOTS_REMAINING} / {MONTHLY_CONSULT_LIMIT}
-                  </p>
-                  <p className="mt-2 text-sm text-slate-300">
-                    {SPOTS_REMAINING} spots left for {month}. Capacity is limited to protect coaching quality.
-                  </p>
-                </>
-              )}
-            </Card>
 
             <Card className="border-slate-800 bg-slate-900/60 p-5">
               <h2 className="text-lg font-semibold text-white">How it works</h2>
@@ -125,7 +91,7 @@ export default function ContactPage({
               variant="outline"
               className="rounded-full border-slate-700 bg-transparent text-white hover:bg-slate-900"
             >
-              <Link href="/services">View Services</Link>
+              <Link href="/#services">View Services</Link>
             </Button>
           </div>
 
