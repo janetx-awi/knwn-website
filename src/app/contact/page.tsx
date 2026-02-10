@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { ContactForm } from "@/components/site/contact-form";
+import { MediaFrame } from "@/components/site/media-frame";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import {
@@ -12,20 +13,45 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { FAQS } from "@/lib/content";
+import { FAQS, SERVICES } from "@/lib/content";
 
 const CONTACT_STEPS = [
-  "Choose Book Consultation or Learn More in the form.",
+  "Choose Book Consultation or Learn More About.",
   "We review your goals, service interest, and skill level.",
-  "You receive next steps with scheduling or a follow-up call.",
+  "You receive next steps for scheduling or direct follow-up.",
 ];
 
-export default function ContactPage() {
+const MONTHLY_CONSULT_LIMIT = 10;
+const SPOTS_REMAINING = 10;
+
+const VALID_INTENTS = new Set(["book-consultation", "learn-more-about"]);
+const VALID_SERVICES = new Set(SERVICES.map((service) => service.slug));
+
+export default function ContactPage({
+  searchParams,
+}: {
+  searchParams: { intent?: string; service?: string };
+}) {
+  const now = new Date();
+  const month = now.toLocaleString("en-US", { month: "long" });
+  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1).toLocaleString("en-US", {
+    month: "long",
+  });
+  const allSpotsReserved = SPOTS_REMAINING <= 0;
+
+  const defaultIntent = searchParams.intent && VALID_INTENTS.has(searchParams.intent)
+    ? searchParams.intent
+    : undefined;
+
+  const defaultService = searchParams.service && VALID_SERVICES.has(searchParams.service)
+    ? searchParams.service
+    : undefined;
+
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
 
-      <main className="mx-auto max-w-6xl px-4 py-8 md:py-10">
+      <main className="mx-auto max-w-6xl px-4 py-6 md:py-10">
         <section className="grid gap-5 md:grid-cols-[1fr_1.1fr] md:items-start">
           <div className="space-y-4">
             <Badge className="rounded-full border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100">
@@ -33,26 +59,38 @@ export default function ContactPage() {
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
-              Start your consultation inquiry
+              Book consultation or learn more
             </h1>
 
             <p className="max-w-xl text-sm text-slate-300 md:text-base">
-              Choose your path, share your goals, and we&apos;ll send the next steps based on service
-              fit and availability.
+              Short form. Clear next steps. Premium support for athletes and families.
             </p>
 
-            <Card className="border-slate-800 bg-slate-900/70 p-5">
+            <Card className="border-slate-800 bg-slate-900/75 p-5">
               <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                Monthly consultation availability
+                Remaining consultation spots this month
               </p>
-              <p className="mt-2 text-4xl font-bold text-white">10 spots</p>
-              <p className="mt-2 text-sm text-slate-300">
-                Spots are intentionally limited each month. If all spots are filled, inquiries roll to
-                the next month waitlist.
-              </p>
+
+              {allSpotsReserved ? (
+                <>
+                  <p className="mt-2 text-2xl font-semibold text-white">
+                    All spots reserved for {month}. Reach out to get on the list.
+                  </p>
+                  <p className="mt-2 text-sm text-slate-300">Next available consultation — {nextMonth}</p>
+                </>
+              ) : (
+                <>
+                  <p className="mt-2 text-4xl font-bold text-white">
+                    {SPOTS_REMAINING} / {MONTHLY_CONSULT_LIMIT}
+                  </p>
+                  <p className="mt-2 text-sm text-slate-300">
+                    {SPOTS_REMAINING} spots left for {month}. Capacity is limited to protect coaching quality.
+                  </p>
+                </>
+              )}
             </Card>
 
-            <Card className="border-slate-800 bg-black/40 p-5">
+            <Card className="border-slate-800 bg-slate-900/60 p-5">
               <h2 className="text-lg font-semibold text-white">How it works</h2>
               <ol className="mt-3 space-y-2 text-sm text-slate-300">
                 {CONTACT_STEPS.map((step, idx) => (
@@ -63,10 +101,19 @@ export default function ContactPage() {
                 ))}
               </ol>
             </Card>
+
+            <Card className="relative h-44 overflow-hidden border-slate-800 bg-slate-900 p-0">
+              <MediaFrame
+                src="/images/knwn/consultation-flow.webp"
+                alt="KNWN training consultation environment"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+            </Card>
           </div>
 
           <Card className="border-slate-800 bg-slate-900/70 p-5 md:p-6">
-            <ContactForm />
+            <ContactForm defaultIntent={defaultIntent} defaultService={defaultService} />
           </Card>
         </section>
 

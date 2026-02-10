@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "KNWN Brand",
   description:
-    "Premium cheer & athletic performance coaching. Book a consultation with KNWN.",
+    "Premium cheer and stunting training with college-journey consulting. Book a KNWN consultation.",
 };
 
 export default function RootLayout({

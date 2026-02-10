@@ -1,5 +1,7 @@
 "use client";
 
+import { FormEvent, useState } from "react";
+
 import { SERVICES } from "@/lib/content";
 
 import { Button } from "@/components/ui/button";
@@ -9,16 +11,21 @@ import { Textarea } from "@/components/ui/textarea";
 const fieldClassName =
   "h-10 rounded-md border-slate-700 bg-slate-950/80 text-white placeholder:text-slate-400 focus-visible:border-slate-500 focus-visible:ring-white/20";
 
-export function ContactForm() {
+type ContactFormProps = {
+  defaultIntent?: string;
+  defaultService?: string;
+};
+
+export function ContactForm({ defaultIntent, defaultService }: ContactFormProps) {
+  const [status, setStatus] = useState<"idle" | "submitted">("idle");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitted");
+  };
+
   return (
-    <form
-      className="grid gap-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        // TODO: Wire to email automation + CRM workflow
-        alert("Thanks! We will be in touch shortly.");
-      }}
-    >
+    <form className="grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-2 md:grid-cols-2">
         <div className="grid gap-2">
           <label className="text-sm font-medium text-slate-200" htmlFor="name">
@@ -58,13 +65,13 @@ export function ContactForm() {
             name="intent"
             required
             className="h-10 rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
-            defaultValue=""
+            defaultValue={defaultIntent ?? ""}
           >
             <option value="" disabled>
               Select one
             </option>
             <option value="book-consultation">Book Consultation</option>
-            <option value="learn-more">Learn More</option>
+            <option value="learn-more-about">Learn More About</option>
           </select>
         </div>
       </div>
@@ -79,7 +86,7 @@ export function ContactForm() {
             name="service"
             required
             className="h-10 rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
-            defaultValue=""
+            defaultValue={defaultService ?? ""}
           >
             <option value="" disabled>
               Select a service
@@ -140,6 +147,10 @@ export function ContactForm() {
           Submit Inquiry
         </Button>
       </div>
+
+      {status === "submitted" ? (
+        <p className="text-sm text-emerald-300">Thanks. Your inquiry has been received.</p>
+      ) : null}
     </form>
   );
 }
