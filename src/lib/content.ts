@@ -21,8 +21,8 @@ export const SERVICES: Service[] = [
     outcome: "Elevated execution. Faster mastery. Proven progression.",
     cadence: "Typically 1-2 sessions per week",
     detailParagraphs: [
-      "At KNWN, one-on-one coaching is not simply private instruction, it is precision development. Every session is built around the athlete’s current skill profile, movement efficiency, mental approach, and long-term goals. Training is intentionally structured to eliminate wasted reps, correct technical inefficiencies, and accelerate mastery through individualized progressions. This environment allows athletes to focus deeply, move with purpose, and train without distraction.",
-      "What separates KNWN one-on-one coaching is how progress is measured and guided. Each athlete trains within the KNWN Method, meaning sessions are not random or reactive, they are part of a larger progression plan designed to prepare athletes for higher-level performance and, when applicable, college readiness. This service is essential for athletes who want clarity, accountability, and elite-level attention that directly translates to confidence on the floor and consistency under pressure.",
+      "At KNWN, one-on-one coaching is not simply private instruction — it is precision development. Every session is built around the athlete’s current skill profile, movement efficiency, mental approach, and long-term goals. Training is intentionally structured to eliminate wasted reps, correct technical inefficiencies, and accelerate mastery through individualized progressions. This environment allows athletes to focus deeply, move with purpose, and train without distraction.",
+      "What separates KNWN one-on-one coaching is how progress is measured and guided. Each athlete trains within the KNWN Method, meaning sessions are not random or reactive — they are part of a larger progression plan designed to prepare athletes for higher-level performance and, when applicable, college readiness. This service is essential for athletes who want clarity, accountability, and elite-level attention that directly translates to confidence on the floor and consistency under pressure.",
     ],
   },
   {
@@ -36,7 +36,7 @@ export const SERVICES: Service[] = [
     cadence: "Typically 1-3 sessions per week",
     detailParagraphs: [
       "KNWN small-group training is intentionally capped to preserve quality, accountability, and focus. Athletes are grouped by skill level, goals, and developmental needs, ensuring that every rep serves a purpose. This structure allows athletes to benefit from peer energy while still receiving individualized feedback, making it ideal for athletes who thrive in a competitive yet controlled environment.",
-      "The importance of this service at KNWN lies in its balance between individual development and performance readiness. Athletes learn how to execute skills with precision while adapting to shared space, timing, and expectation, all critical elements of real-world cheer environments. Unlike traditional group classes, KNWN small-group sessions are designed to elevate athletes who are ready to train with intention, sharpen execution, and prepare for the demands of elite programs and tryout settings.",
+      "The importance of this service at KNWN lies in its balance between individual development and performance readiness. Athletes learn how to execute skills with precision while adapting to shared space, timing, and expectation — all critical elements of real-world cheer environments. Unlike traditional group classes, KNWN small-group sessions are designed to elevate athletes who are ready to train with intention, sharpen execution, and prepare for the demands of elite programs and tryout settings.",
     ],
   },
   {
@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     cadence: "Milestone-based planning with coaching support",
     detailParagraphs: [
       "The KNWN High School to College Pathway is a strategic development experience, not a one-time consult. This service is designed for athletes and families who want clarity around what it actually takes to compete at the next level. From skill expectations and progression timelines to mental readiness and exposure strategy, athletes receive guidance that aligns training with long-term outcomes.",
-      "What makes this pathway essential at KNWN is the integration of training and planning. Rather than separating skill development from college preparation, KNWN intentionally connects the two. Athletes are guided through intentional goal setting, realistic timelines, and honest evaluations, ensuring that effort is aligned with opportunity. This service exists to eliminate guesswork, build confidence, and help athletes move forward with direction, purpose, and an elite standard.",
+      "What makes this pathway essential at KNWN is the integration of training and planning. Rather than separating skill development from college preparation, KNWN intentionally connects the two. Athletes are guided through intentional goal setting, realistic timelines, and honest evaluations — ensuring that effort is aligned with opportunity. This service exists to eliminate guesswork, build confidence, and help athletes move forward with direction, purpose, and an elite standard.",
     ],
   },
   {
