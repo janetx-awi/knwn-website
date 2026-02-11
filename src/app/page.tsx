@@ -17,21 +17,44 @@ const SERVICE_IMAGES: Record<string, string> = {
   "social-media-guidance": "/images/knwn/service-intensity.webp",
 };
 
+const KNWN_METHOD = [
+  {
+    title: "Elite, Tiered Development Framework",
+    description: "A premium model with clear benchmarks at every level.",
+  },
+  {
+    title: "Structured Progress Mapping",
+    description: "Progress isn’t guesswork — it’s measurable.",
+  },
+  {
+    title: "College Prep & Exposure Strategy",
+    description: "Support designed around what recruiters want.",
+  },
+  {
+    title: "Membership-First Model",
+    description: "Consistency. Accountability. Results.",
+  },
+  {
+    title: "Limited Consult Access",
+    description: "Spots capped monthly to protect quality.",
+  },
+];
+
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Choose your service",
-    description: "Select the training path that fits your athlete's goals and timeline.",
+    title: "Request Your Consult",
+    description: "Submit an application or consultation request — spots are limited.",
   },
   {
     step: "02",
-    title: "Submit",
-    description: "Complete the short inquiry form so we can review your next best step.",
+    title: "Personalized Strategy Review",
+    description: "We evaluate fit, skills, and goals before outlining your elite plan.",
   },
   {
     step: "03",
-    title: "Start your journey",
-    description: "Move into structured coaching and consistent progression with KNWN.",
+    title: "Begin Your Elite Journey",
+    description: "Activate your tailored training and progress with purpose.",
   },
 ];
 
@@ -80,21 +103,21 @@ export default function Home() {
           <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10 pt-24 md:pt-28">
             <div className="max-w-3xl space-y-5">
               <Badge className="rounded-full border border-slate-600 bg-black/50 px-4 py-1 text-slate-100">
-                Colorado&apos;s First Exclusive Cheer Training Facility
+                Colorado&apos;s Premier Elite Cheer & Stunting Development Facility
               </Badge>
 
               <h1 className="text-balance text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
-                Train with structure.
-                <span className="block text-slate-100">Build your college journey.</span>
+                Train With Precision. Progress With Purpose. Become KNWN.
               </h1>
 
-              <p className="max-w-2xl text-base text-slate-200 md:text-lg">
-                Premium cheer and stunt development for athletes and families who want more than reps.
-              </p>
+              <div className="space-y-1 text-base text-slate-200 md:text-lg">
+                <p>For Athletes & Families Who Demand More Than Practice.</p>
+                <p>Structured progression. Intentional coaching. Exclusive monthly access.</p>
+              </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                  <Link href="/contact?intent=book-consultation">Book a Consult</Link>
+                  <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
                 </Button>
                 <Button
                   asChild
@@ -102,7 +125,7 @@ export default function Home() {
                   variant="outline"
                   className="rounded-full border-slate-500 bg-transparent text-white hover:bg-black/60"
                 >
-                  <Link href="/#services">See Services</Link>
+                  <Link href="/#services">Begin Your Path to Elite</Link>
                 </Button>
               </div>
             </div>
@@ -114,6 +137,23 @@ export default function Home() {
           alt="Athletes beginning focused reps at KNWN"
           label="Focused reps. Intentional coaching."
         />
+
+        <section id="method" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
+          <div className="mb-5 space-y-2">
+            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+              The KNWN Method: Where Progress Meets Purpose
+            </h2>
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-2">
+            {KNWN_METHOD.map((item) => (
+              <Card key={item.title} className="border-slate-800 bg-slate-900/75 p-4">
+                <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-300">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         <section id="services" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
           <div className="mb-5 space-y-2">
@@ -153,7 +193,8 @@ export default function Home() {
                       ) : null}
                     </div>
 
-                    <p className="line-clamp-2 text-sm text-slate-300">{service.summary}</p>
+                    <p className="line-clamp-3 text-sm text-slate-300">{service.summary}</p>
+                    <p className="line-clamp-2 text-xs text-slate-400">Outcome: {service.outcome}</p>
 
                     <div className="flex flex-wrap gap-2">
                       <Button
@@ -230,14 +271,17 @@ export default function Home() {
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-                  Ready to train the KNWN way?
+                  Are You Ready to Be KNWN?
                 </h2>
                 <p className="mt-2 text-sm text-slate-300 md:text-base">
-                  Request your next step and we&apos;ll guide you from inquiry to action.
+                  Elite results require elite focus. Consultation spots are intentionally capped.
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-100 md:text-base">
+                  Become Seen. Become Sought. Become KNWN.
                 </p>
               </div>
               <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                <Link href="/contact?intent=book-consultation">Book a Consult</Link>
+                <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
               </Button>
             </div>
           </Card>

@@ -61,6 +61,13 @@ export default function ServiceDetailPage({
             <h2 className="text-2xl font-semibold text-white">Overview</h2>
 
             <p className="text-sm text-slate-300 md:text-base">{service.summary}</p>
+
+            {service.detailParagraphs?.map((paragraph, index) => (
+              <p key={`${service.slug}-detail-${index}`} className="text-sm text-slate-300 md:text-base">
+                {paragraph}
+              </p>
+            ))}
+
             <p className="text-sm text-slate-300 md:text-base">This service is built for {service.bestFor}</p>
             <p className="text-sm text-slate-300 md:text-base">
               It is delivered through {service.format.toLowerCase()} and focuses on {service.outcome.toLowerCase()}

@@ -15,7 +15,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
           <div className="text-sm font-semibold tracking-[0.22em] text-white">KNWN</div>
-          <p className="text-sm text-slate-400">Exclusive cheer and stunting development. Be Seen. Be KNWN.</p>
+          <p className="text-sm text-slate-400">KNWN — Where Elite Athletes Become Unforgettable</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">

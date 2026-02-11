@@ -6,29 +6,38 @@ export type Service = {
   format: string;
   outcome: string;
   cadence: string;
+  detailParagraphs?: string[];
   comingSoon?: boolean;
 };
 
 export const SERVICES: Service[] = [
   {
     slug: "personalized-coaching",
-    title: "Personalized Coaching (1-on-1)",
+    title: "One-on-One Elite Coaching",
     summary:
-      "Individualized sessions built around the athlete’s goals, current level, and progression pace.",
+      "Precision training tailored to athlete goals, skill level, and college ambition.",
     bestFor: "Athletes who need custom technical coaching and direct feedback every session.",
     format: "Private sessions",
-    outcome: "Cleaner execution, faster corrections, and measurable progress.",
+    outcome: "Elevated execution. Faster mastery. Proven progression.",
     cadence: "Typically 1-2 sessions per week",
+    detailParagraphs: [
+      "At KNWN, one-on-one coaching is not simply private instruction, it is precision development. Every session is built around the athlete’s current skill profile, movement efficiency, mental approach, and long-term goals. Training is intentionally structured to eliminate wasted reps, correct technical inefficiencies, and accelerate mastery through individualized progressions. This environment allows athletes to focus deeply, move with purpose, and train without distraction.",
+      "What separates KNWN one-on-one coaching is how progress is measured and guided. Each athlete trains within the KNWN Method, meaning sessions are not random or reactive, they are part of a larger progression plan designed to prepare athletes for higher-level performance and, when applicable, college readiness. This service is essential for athletes who want clarity, accountability, and elite-level attention that directly translates to confidence on the floor and consistency under pressure.",
+    ],
   },
   {
     slug: "semi-private-training",
-    title: "Semi-Private Training",
+    title: "Selective Small-Group Training",
     summary:
-      "Small-group coaching with focused instruction, clear standards, and high accountability.",
+      "Focused instruction in high-accountability groups for accelerated confidence and consistent performance gains.",
     bestFor: "Athletes who thrive in a focused peer setting without losing individual attention.",
     format: "Small group (limited spots)",
-    outcome: "Higher quality reps, stronger confidence, and consistent development.",
+    outcome: "Accelerated confidence, sharper execution, and consistent performance gains.",
     cadence: "Typically 1-3 sessions per week",
+    detailParagraphs: [
+      "KNWN small-group training is intentionally capped to preserve quality, accountability, and focus. Athletes are grouped by skill level, goals, and developmental needs, ensuring that every rep serves a purpose. This structure allows athletes to benefit from peer energy while still receiving individualized feedback, making it ideal for athletes who thrive in a competitive yet controlled environment.",
+      "The importance of this service at KNWN lies in its balance between individual development and performance readiness. Athletes learn how to execute skills with precision while adapting to shared space, timing, and expectation, all critical elements of real-world cheer environments. Unlike traditional group classes, KNWN small-group sessions are designed to elevate athletes who are ready to train with intention, sharpen execution, and prepare for the demands of elite programs and tryout settings.",
+    ],
   },
   {
     slug: "classes-tumbling-stunting",
@@ -43,13 +52,17 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "high-school-college-pathway",
-    title: "High School + College Pathway",
+    title: "High School → College Pathway",
     summary:
-      "College-journey consulting and development support for athletes preparing for what’s next.",
+      "Elite roadmap and coaching support designed for athletes ready to transition to the next level — with clarity and confidence.",
     bestFor: "Athletes and families seeking a clear path beyond all-star environments.",
     format: "Consulting + athlete development planning",
-    outcome: "Aligned next steps, stronger readiness, and confident long-term direction.",
+    outcome: "Aligned preparation, stronger readiness, and confident next-level direction.",
     cadence: "Milestone-based planning with coaching support",
+    detailParagraphs: [
+      "The KNWN High School to College Pathway is a strategic development experience, not a one-time consult. This service is designed for athletes and families who want clarity around what it actually takes to compete at the next level. From skill expectations and progression timelines to mental readiness and exposure strategy, athletes receive guidance that aligns training with long-term outcomes.",
+      "What makes this pathway essential at KNWN is the integration of training and planning. Rather than separating skill development from college preparation, KNWN intentionally connects the two. Athletes are guided through intentional goal setting, realistic timelines, and honest evaluations, ensuring that effort is aligned with opportunity. This service exists to eliminate guesswork, build confidence, and help athletes move forward with direction, purpose, and an elite standard.",
+    ],
   },
   {
     slug: "mental-performance-training",
@@ -88,7 +101,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Which services are available now?",
-    a: "Personalized Coaching, Semi-Private Training, High School + College Pathway, Mental Performance Training, and Social Media Guidance are available now. Classes: Tumbling + Stunting are launching soon.",
+    a: "One-on-One Elite Coaching, Selective Small-Group Training, High School → College Pathway, Mental Performance Training, and Social Media Guidance are available now. Classes: Tumbling + Stunting are launching soon.",
   },
   {
     q: "What athlete levels do you support?",
@@ -96,6 +109,6 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do you support college journey planning?",
-    a: "Yes. College-journey consulting is a core KNWN differentiator and a central part of our athlete development model.",
+    a: "Yes. College prep and exposure strategy are core KNWN differentiators and central parts of our athlete development model.",
   },
 ];
