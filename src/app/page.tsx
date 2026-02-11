@@ -17,44 +17,22 @@ const SERVICE_IMAGES: Record<string, string> = {
   "social-media-guidance": "/images/knwn/service-intensity.webp",
 };
 
-const KNWN_METHOD = [
-  {
-    title: "Elite, Tiered Development Framework",
-    description: "A premium model with clear benchmarks at every level.",
-  },
-  {
-    title: "Structured Progress Mapping",
-    description: "Progress isn’t guesswork — it’s measurable.",
-  },
-  {
-    title: "College Prep & Exposure Strategy",
-    description: "Support designed around what recruiters want.",
-  },
-  {
-    title: "Membership-First Model",
-    description: "Consistency. Accountability. Results.",
-  },
-  {
-    title: "Limited Consult Access",
-    description: "Spots capped monthly to protect quality.",
-  },
-];
-
+/* Simplified How It Works — Sean: Step 1 = "Choose your service" */
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Request Your Consult",
-    description: "Submit an application or consultation request — spots are limited.",
+    title: "Choose Your Service",
+    description: "Browse our services and pick the path that fits your athlete.",
   },
   {
     step: "02",
-    title: "Personalized Strategy Review",
-    description: "We evaluate fit, skills, and goals before outlining your elite plan.",
+    title: "Submit Your Request",
+    description: "Fill out the contact form — we review goals, skill level, and fit.",
   },
   {
     step: "03",
-    title: "Begin Your Elite Journey",
-    description: "Activate your tailored training and progress with purpose.",
+    title: "Start Your Journey",
+    description: "Get your tailored plan and begin training with purpose.",
   },
 ];
 
@@ -91,6 +69,7 @@ export default function Home() {
       <SiteHeader />
 
       <main>
+        {/* ── HERO — shortened tagline per Sean's feedback ── */}
         <section className="relative isolate min-h-screen overflow-hidden">
           <MediaFrame
             src="/images/knwn/hero-action.webp"
@@ -103,21 +82,20 @@ export default function Home() {
           <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10 pt-24 md:pt-28">
             <div className="max-w-3xl space-y-5">
               <Badge className="rounded-full border border-slate-600 bg-black/50 px-4 py-1 text-slate-100">
-                Colorado&apos;s Premier Elite Cheer & Stunting Development Facility
+                Colorado&apos;s Premier Elite Cheer &amp; Stunting Facility
               </Badge>
 
               <h1 className="text-balance text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
-                Train With Precision. Progress With Purpose. Become KNWN.
+                Train Today. Known Tomorrow.
               </h1>
 
               <div className="space-y-1 text-base text-slate-200 md:text-lg">
-                <p>For Athletes & Families Who Demand More Than Practice.</p>
-                <p>Structured progression. Intentional coaching. Exclusive monthly access.</p>
+                <p>Premium cheer and stunt development for athletes and families who want more than reps.</p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                  <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
+                  <Link href="/contact?intent=book-consultation">Book a Consult</Link>
                 </Button>
                 <Button
                   asChild
@@ -125,36 +103,21 @@ export default function Home() {
                   variant="outline"
                   className="rounded-full border-slate-500 bg-transparent text-white hover:bg-black/60"
                 >
-                  <Link href="/#services">Begin Your Path to Elite</Link>
+                  <Link href="/#services">See Services</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
+        {/* ── IMAGE BREAK 1 — hands/reps image with matching label ── */}
         <ImageBreak
-          src="/images/knwn/goal-start.webp"
-          alt="Athletes beginning focused reps at KNWN"
+          src="/images/knwn/service-intensity.webp"
+          alt="Focused hand placement and intentional reps at KNWN"
           label="Focused reps. Intentional coaching."
         />
 
-        <section id="method" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
-          <div className="mb-5 space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-              The KNWN Method: Where Progress Meets Purpose
-            </h2>
-          </div>
-
-          <div className="grid gap-3 md:grid-cols-2">
-            {KNWN_METHOD.map((item) => (
-              <Card key={item.title} className="border-slate-800 bg-slate-900/75 p-4">
-                <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-300">{item.description}</p>
-              </Card>
-            ))}
-          </div>
-        </section>
-
+        {/* ── SERVICES CAROUSEL ── */}
         <section id="services" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
           <div className="mb-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Services</h2>
@@ -194,7 +157,6 @@ export default function Home() {
                     </div>
 
                     <p className="line-clamp-3 text-sm text-slate-300">{service.summary}</p>
-                    <p className="line-clamp-2 text-xs text-slate-400">Outcome: {service.outcome}</p>
 
                     <div className="flex flex-wrap gap-2">
                       <Button
@@ -215,24 +177,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── IMAGE BREAK 2 — athletes image with matching label ── */}
         <ImageBreak
-          src="/images/knwn/service-intensity.webp"
-          alt="KNWN athletes training with strong intensity"
+          src="/images/knwn/goal-start.webp"
+          alt="Athletes building confidence at KNWN training"
           label="Built for athletes who want more."
         />
 
+        {/* ── HOW IT WORKS — bolder heading, updated steps ── */}
         <section id="about" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">How it works</h2>
+            <h2 className="text-3xl font-bold uppercase tracking-wide text-white md:text-4xl">
+              How It Works
+            </h2>
 
             <div className="grid overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 md:grid-cols-3">
               {HOW_IT_WORKS.map((item, index) => (
                 <div
                   key={item.step}
-                  className={`space-y-2 p-4 ${index < HOW_IT_WORKS.length - 1 ? "border-b border-slate-800 md:border-b-0 md:border-r" : ""}`}
+                  className={`space-y-2 p-5 ${index < HOW_IT_WORKS.length - 1 ? "border-b border-slate-800 md:border-b-0 md:border-r" : ""}`}
                 >
                   <p className="text-xs font-semibold tracking-[0.18em] text-slate-400">{item.step}</p>
-                  <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   <p className="text-sm text-slate-300">{item.description}</p>
                 </div>
               ))}
@@ -240,12 +206,14 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── IMAGE BREAK 3 — using consultation-flow to avoid the mouth-crop issue ── */}
         <ImageBreak
-          src="/images/knwn/trust-athletes.webp"
+          src="/images/knwn/consultation-flow.webp"
           alt="Athletes and families building trust with KNWN coaching"
           label="Trusted by athletes and families."
         />
 
+        {/* ── TESTIMONIALS ── */}
         <section className="mx-auto max-w-6xl px-4 py-8 md:py-12">
           <div className="mb-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Testimonials</h2>
@@ -266,6 +234,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── FINAL CTA ── */}
         <section className="mx-auto max-w-6xl px-4 pb-8 md:pb-12">
           <Card className="rounded-3xl border-slate-800 bg-gradient-to-r from-slate-900 to-black p-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -274,14 +243,11 @@ export default function Home() {
                   Are You Ready to Be KNWN?
                 </h2>
                 <p className="mt-2 text-sm text-slate-300 md:text-base">
-                  Elite results require elite focus. Consultation spots are intentionally capped.
-                </p>
-                <p className="mt-2 text-sm font-semibold text-slate-100 md:text-base">
-                  Become Seen. Become Sought. Become KNWN.
+                  Consultation spots are intentionally limited. Start your journey today.
                 </p>
               </div>
               <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
+                <Link href="/contact?intent=book-consultation">Book a Consult</Link>
               </Button>
             </div>
           </Card>

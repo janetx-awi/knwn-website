@@ -15,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FAQS, SERVICES } from "@/lib/content";
 
-const CONTACT_STEPS = [
-  "Choose Book Consultation or Learn More About.",
-  "We review your goals, service interest, and skill level.",
-  "You receive next steps for scheduling or direct follow-up.",
-];
-
 const VALID_INTENTS = new Set(["book-consultation", "learn-more-about"]);
 const VALID_SERVICES = new Set(SERVICES.map((service) => service.slug));
 
@@ -42,6 +36,7 @@ export default function ContactPage({
       <SiteHeader />
 
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-10">
+        {/* ── Contact header + form — How It Works card REMOVED per Sean's feedback ── */}
         <section className="grid gap-5 md:grid-cols-[1fr_1.1fr] md:items-start">
           <div className="space-y-4">
             <Badge className="rounded-full border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100">
@@ -49,26 +44,14 @@ export default function ContactPage({
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
-              Book consultation or learn more
+              Book a consultation or learn more
             </h1>
 
             <p className="max-w-xl text-sm text-slate-300 md:text-base">
               Short form. Clear next steps. Premium support for athletes and families.
             </p>
 
-            <Card className="border-slate-800 bg-slate-900/60 p-5">
-              <h2 className="text-lg font-semibold text-white">How it works</h2>
-              <ol className="mt-3 space-y-2 text-sm text-slate-300">
-                {CONTACT_STEPS.map((step, idx) => (
-                  <li key={step}>
-                    <span className="mr-2 font-semibold text-white">{idx + 1}.</span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
-            </Card>
-
-            <Card className="relative h-44 overflow-hidden border-slate-800 bg-slate-900 p-0">
+            <Card className="relative h-52 overflow-hidden border-slate-800 bg-slate-900 p-0">
               <MediaFrame
                 src="/images/knwn/consultation-flow.webp"
                 alt="KNWN training consultation environment"
@@ -83,9 +66,10 @@ export default function ContactPage({
           </Card>
         </section>
 
+        {/* ── FAQ ── */}
         <section id="faq" className="mt-8">
           <div className="mb-3 flex items-center justify-between gap-3">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">FAQ</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">FAQ</h2>
             <Button
               asChild
               variant="outline"
