@@ -15,39 +15,42 @@ const SERVICE_IMAGES: Record<string, string> = {
   "high-school-college-pathway": "/images/knwn/hero-action.webp",
   "mental-performance-training": "/images/knwn/consultation-flow.webp",
   "social-media-guidance": "/images/knwn/service-intensity.webp",
+  "knwn-academy": "/images/knwn/trust-athletes.webp",
 };
 
-/* Simplified How It Works — Sean: Step 1 = "Choose your service" */
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Choose Your Service",
-    description: "Browse our services and pick the path that fits your athlete.",
+    title: "Request Your Consult",
+    description: "Submit your inquiry to claim one of this month's limited consultation spots.",
   },
   {
     step: "02",
-    title: "Submit Your Request",
-    description: "Fill out the contact form — we review goals, skill level, and fit.",
+    title: "Personalized Strategy Review",
+    description: "We review your athlete's goals, level, and timeline. You receive a custom development plan.",
   },
   {
     step: "03",
-    title: "Start Your Journey",
-    description: "Get your tailored plan and begin training with purpose.",
+    title: "Begin Your Elite Journey",
+    description: "Training begins with structure, intentionality, and a clear path to elite performance.",
   },
 ];
 
 const TESTIMONIAL_PLACEHOLDERS = [
   {
-    athlete: "Athlete testimonial",
-    context: "Placeholder profile",
+    quote: "Real athlete stories coming. Placeholder ready for Sean's content.",
+    name: "Athlete Name",
+    context: "College Commit · Cheer",
   },
   {
-    athlete: "Parent testimonial",
-    context: "Placeholder profile",
+    quote: "Parent perspective placeholder — ready for Sean's quote.",
+    name: "Parent Name",
+    context: "Parent of KNWN Athlete",
   },
   {
-    athlete: "College pathway testimonial",
-    context: "Placeholder profile",
+    quote: "College pathway success story — placeholder ready.",
+    name: "Athlete Name",
+    context: "College Pathway Graduate",
   },
 ];
 
@@ -86,16 +89,16 @@ export default function Home() {
               </Badge>
 
               <h1 className="text-balance text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
-                Train Today. Known Tomorrow.
+                GRIND TODAY. KNWN TOMORROW.
               </h1>
 
               <div className="space-y-1 text-base text-slate-200 md:text-lg">
-                <p>Premium cheer and stunt development for athletes and families who want more than reps.</p>
+                <p>For Athletes &amp; Families Who Demand More Than Practice. Structured progression. Intentional coaching. Exclusive monthly access.</p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                  <Link href="/contact?intent=book-consultation">Book a Consult</Link>
+                  <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
                 </Button>
                 <Button
                   asChild
@@ -103,11 +106,19 @@ export default function Home() {
                   variant="outline"
                   className="rounded-full border-slate-500 bg-transparent text-white hover:bg-black/60"
                 >
-                  <Link href="/#services">See Services</Link>
+                  <Link href="/#services">Begin Your Path to Elite</Link>
                 </Button>
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ── SUB-HERO TAGLINE ── */}
+        <section className="border-b border-slate-800 bg-slate-950 px-4 py-10 text-center">
+          <p className="mx-auto max-w-2xl text-base font-medium text-slate-200 md:text-lg">
+            For Athletes &amp; Families Who Demand More Than Practice.{" "}
+            <span className="text-slate-400">Structured progression. Intentional coaching. Exclusive monthly access.</span>
+          </p>
         </section>
 
         {/* ── IMAGE BREAK 1 — hands/reps image with matching label ── */}
@@ -224,13 +235,36 @@ export default function Home() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {TESTIMONIAL_PLACEHOLDERS.map((item) => (
-              <Card key={item.athlete} className="border-slate-800 bg-slate-900/75 p-5">
+              <Card key={item.name + item.context} className="border-slate-800 bg-slate-900/75 p-5">
                 <div className="mb-4 h-12 w-12 rounded-full border border-slate-700 bg-slate-950" />
-                <p className="text-base italic text-slate-200">&ldquo;Placeholder: athlete testimonial needed&rdquo;</p>
-                <p className="mt-4 text-sm font-semibold text-white">{item.athlete}</p>
+                <p className="text-base italic text-slate-200">&ldquo;{item.quote}&rdquo;</p>
+                <p className="mt-4 text-sm font-semibold text-white">{item.name}</p>
                 <p className="text-xs text-slate-400">{item.context}</p>
               </Card>
             ))}
+          </div>
+        </section>
+
+        {/* ── MERCH ── */}
+        <section id="merch" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 md:p-10">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Official KNWN Gear</p>
+                <h2 className="text-2xl font-bold text-white md:text-3xl">Wear the Standard.</h2>
+                <p className="max-w-md text-sm text-slate-300">
+                  KNWN apparel is built for athletes who train with intention. Shop shorts, hoodies, sports bras, and more — exclusively through our official proshop.
+                </p>
+                <p className="text-xs text-slate-500">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
+              </div>
+              <div className="flex-shrink-0">
+                <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
+                  <a href="https://flyathletics.com/proshops/knwn-brand/" target="_blank" rel="noreferrer">
+                    Shop KNWN Gear →
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -243,11 +277,12 @@ export default function Home() {
                   Are You Ready to Be KNWN?
                 </h2>
                 <p className="mt-2 text-sm text-slate-300 md:text-base">
-                  Consultation spots are intentionally limited. Start your journey today.
+                  Elite results require elite focus. Consultation spots are intentionally capped.
                 </p>
+                <p className="mt-1 text-sm font-semibold tracking-wide text-slate-300">Become Seen. Become Sought. Become KNWN.</p>
               </div>
               <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-slate-200">
-                <Link href="/contact?intent=book-consultation">Book a Consult</Link>
+                <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
               </Button>
             </div>
           </Card>

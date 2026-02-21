@@ -16,6 +16,7 @@ const SERVICE_HERO_IMAGES: Record<string, string> = {
   "high-school-college-pathway": "/images/knwn/hero-action.webp",
   "mental-performance-training": "/images/knwn/consultation-flow.webp",
   "social-media-guidance": "/images/knwn/service-intensity.webp",
+  "knwn-academy": "/images/knwn/trust-athletes.webp",
 };
 
 export default function ServiceDetailPage({
@@ -67,6 +68,12 @@ export default function ServiceDetailPage({
                 {paragraph}
               </p>
             ))}
+
+            {service.closingStatement && (
+              <p className="border-l-2 border-slate-500 pl-3 text-sm italic font-medium text-slate-100 md:text-base">
+                {service.closingStatement}
+              </p>
+            )}
 
             <p className="text-sm text-slate-300 md:text-base">This service is built for {service.bestFor}</p>
             <p className="text-sm text-slate-300 md:text-base">
