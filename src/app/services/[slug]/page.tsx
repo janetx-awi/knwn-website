@@ -19,12 +19,17 @@ const SERVICE_HERO_IMAGES: Record<string, string> = {
   "knwn-academy": "/images/knwn/trust-athletes.webp",
 };
 
-export default function ServiceDetailPage({
+export function generateStaticParams() {
+  return SERVICES.map((service) => ({ slug: service.slug }));
+}
+
+export default async function ServiceDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const service = SERVICES.find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const service = SERVICES.find((item) => item.slug === slug);
 
   if (!service) return notFound();
 
