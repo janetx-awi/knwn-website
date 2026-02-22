@@ -11,12 +11,12 @@ import { SERVICES } from "@/lib/content";
 
 const SERVICE_IMAGES: Record<string, string> = {
   "personalized-coaching": "/images/knwn/coach-1on1.jpg",
-  "semi-private-training": "/images/knwn/goal-start.webp",
-  "classes-tumbling-stunting": "/images/knwn/stunt-flyer.jpg",
-  "high-school-college-pathway": "/images/knwn/hero-action.webp",
-  "mental-performance-training": "/images/knwn/consultation-flow.webp",
-  "social-media-guidance": "/images/knwn/coach-instruction.jpg",
-  "knwn-academy": "/images/knwn/academy-stunt.jpg",
+  "semi-private-training": "/images/knwn/group-training.jpg",
+  "classes-tumbling-stunting": "/images/knwn/stunt-high.jpg",
+  "high-school-college-pathway": "/images/knwn/college-path.jpg",
+  "mental-performance-training": "/images/knwn/mental-focus.jpg",
+  "social-media-guidance": "/images/knwn/brand-confidence.jpg",
+  "knwn-academy": "/images/knwn/academy-group.jpg",
 };
 
 const HOW_IT_WORKS = [
@@ -251,8 +251,8 @@ export default function Home() {
 
         {/* ── IMAGE BREAK 3 ── */}
         <ImageBreak
-          src="/images/knwn/consultation-flow.webp"
-          alt="Athletes and families building trust with KNWN coaching"
+          src="/images/knwn/trusted-athletes.jpg"
+          alt="KNWN athletes training side by side"
           label="Trusted by athletes and families."
         />
 

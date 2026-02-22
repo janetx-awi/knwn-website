@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 
@@ -6,7 +7,13 @@ export function SiteFooter() {
     <footer className="border-t border-slate-800 bg-black">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
-          <div className="font-display text-base font-extrabold tracking-[0.25em] text-white">KNWN</div>
+          <Image
+            src="/images/knwn/knwn-logo.png"
+            alt="KNWN Brand"
+            width={120}
+            height={80}
+            className="h-10 w-auto"
+          />
           <p className="text-sm text-slate-500">Where Elite Athletes Become Unforgettable</p>
         </div>
 
