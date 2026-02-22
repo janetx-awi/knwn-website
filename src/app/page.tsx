@@ -9,25 +9,26 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SERVICES } from "@/lib/content";
 
+// Andrew-approved photo list only — 22 photos, no others
 const SERVICE_IMAGES: Record<string, string> = {
-  "personalized-coaching":      "/images/knwn/coaching-connection.jpg", // KNWN-50: coach talking to athletes, all faces
-  "semi-private-training":      "/images/knwn/athletes-smiling.jpg",    // KNWN-28: two smiling athletes, warm & happy
-  "classes-tumbling-stunting":  "/images/knwn/stunt-smile.jpg",         // KNWN-30: flyer standing on bases, smiling at camera
-  "high-school-college-pathway":"/images/knwn/college-path.jpg",        // KNWN-115: aspirational solo portrait (already in repo)
-  "mental-performance-training":"/images/knwn/athlete-focus.jpg",       // KNWN-105: confident athlete, determined face
-  "social-media-guidance":      "/images/knwn/lifestyle-smile.jpg",     // KNWN-67: big warm smile, lifestyle energy
-  "knwn-academy":               "/images/knwn/academy-group.jpg",       // KNWN-120: 4 athletes in KNWN gear, all faces (already in repo)
+  "personalized-coaching":       "/images/knwn/coach-athlete-catch.jpg",   // KNWN-109: coach+athlete, 1:1 training
+  "semi-private-training":       "/images/knwn/group-training-floor.jpg",  // KNWN-23: group training session
+  "classes-tumbling-stunting":   "/images/knwn/stunt-tower.jpg",           // KNWN-15: tower stunt, flyer elevated
+  "high-school-college-pathway": "/images/knwn/athlete-smile-solo.jpg",    // KNWN-91: individual smile, aspirational
+  "mental-performance-training": "/images/knwn/athlete-focus.jpg",         // KNWN-105: confident/focused athlete
+  "social-media-guidance":       "/images/knwn/group-smile-3.jpg",         // KNWN-68: group smiling, lifestyle
+  "knwn-academy":                "/images/knwn/students-three.jpg",        // KNWN-112: 3 students, group portrait
 };
 
-// Force faces into view — all portrait photos crop to top
+// Crop positions tuned per photo orientation — faces stay in the h-44 card window
 const SERVICE_POSITIONS: Record<string, string> = {
-  "personalized-coaching":       "object-top",
-  "semi-private-training":       "object-top",
-  "classes-tumbling-stunting":   "object-top",
-  "high-school-college-pathway": "object-top",
-  "mental-performance-training": "object-top",
-  "social-media-guidance":       "object-top",
-  "knwn-academy":                "object-center",  // landscape group shot, center is fine
+  "personalized-coaching":       "object-bottom",  // portrait: coach face at bottom of image, athlete above
+  "semi-private-training":       "object-top",     // landscape: faces at top
+  "classes-tumbling-stunting":   "object-top",     // portrait: flyer's face at top of tower
+  "high-school-college-pathway": "object-center",  // landscape: face centered
+  "mental-performance-training": "object-top",     // portrait: face at top
+  "social-media-guidance":       "object-top",     // portrait: faces at top
+  "knwn-academy":                "object-top",     // landscape: faces at top
 };
 
 const HOW_IT_WORKS = [
@@ -104,7 +105,7 @@ export default function Home() {
         {/* ── HERO ── */}
         <section className="relative isolate min-h-screen overflow-hidden">
           <MediaFrame
-            src="/images/knwn/hero-action.webp"
+            src="/images/knwn/hero-main.jpg"
             alt="KNWN athletes training with focused coaching"
             priority
             sizes="100vw"
@@ -161,8 +162,8 @@ export default function Home() {
 
         {/* ── IMAGE BREAK 1 ── */}
         <ImageBreak
-          src="/images/knwn/stunt-action.jpg"
-          alt="KNWN athletes executing a stunt with precision"
+          src="/images/knwn/coach-wide.jpg"
+          alt="KNWN coach instructing athletes on the floor"
           label="Focused reps. Intentional coaching."
         />
 
@@ -263,8 +264,8 @@ export default function Home() {
 
         {/* ── IMAGE BREAK 3 ── */}
         <ImageBreak
-          src="/images/knwn/trusted-athletes.jpg"
-          alt="KNWN athletes training side by side"
+          src="/images/knwn/coach-group.jpg"
+          alt="KNWN coach training with athletes"
           label="Trusted by athletes and families."
         />
 

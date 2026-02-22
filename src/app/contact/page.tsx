@@ -38,8 +38,8 @@ export default function ContactPage({
       {/* ── HERO HEADER ── */}
       <section className="relative h-56 overflow-hidden md:h-72">
         <MediaFrame
-          src="/images/knwn/consultation-flow.webp"
-          alt="KNWN training consultation environment"
+          src="/images/knwn/girl-smiling-knwn.jpg"
+          alt="KNWN athlete ready to claim their spot"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/70" />
