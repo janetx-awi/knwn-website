@@ -10,13 +10,24 @@ import { Card } from "@/components/ui/card";
 import { SERVICES } from "@/lib/content";
 
 const SERVICE_IMAGES: Record<string, string> = {
-  "personalized-coaching": "/images/knwn/coach-1on1.jpg",
-  "semi-private-training": "/images/knwn/group-training.jpg",
-  "classes-tumbling-stunting": "/images/knwn/stunt-high.jpg",
-  "high-school-college-pathway": "/images/knwn/college-path.jpg",
-  "mental-performance-training": "/images/knwn/mental-focus.jpg",
-  "social-media-guidance": "/images/knwn/brand-confidence.jpg",
-  "knwn-academy": "/images/knwn/academy-group.jpg",
+  "personalized-coaching":      "/images/knwn/coaching-connection.jpg", // KNWN-50: coach talking to athletes, all faces
+  "semi-private-training":      "/images/knwn/athletes-smiling.jpg",    // KNWN-28: two smiling athletes, warm & happy
+  "classes-tumbling-stunting":  "/images/knwn/stunt-smile.jpg",         // KNWN-30: flyer standing on bases, smiling at camera
+  "high-school-college-pathway":"/images/knwn/college-path.jpg",        // KNWN-115: aspirational solo portrait (already in repo)
+  "mental-performance-training":"/images/knwn/athlete-focus.jpg",       // KNWN-105: confident athlete, determined face
+  "social-media-guidance":      "/images/knwn/lifestyle-smile.jpg",     // KNWN-67: big warm smile, lifestyle energy
+  "knwn-academy":               "/images/knwn/academy-group.jpg",       // KNWN-120: 4 athletes in KNWN gear, all faces (already in repo)
+};
+
+// Force faces into view — all portrait photos crop to top
+const SERVICE_POSITIONS: Record<string, string> = {
+  "personalized-coaching":       "object-top",
+  "semi-private-training":       "object-top",
+  "classes-tumbling-stunting":   "object-top",
+  "high-school-college-pathway": "object-top",
+  "mental-performance-training": "object-top",
+  "social-media-guidance":       "object-top",
+  "knwn-academy":                "object-center",  // landscape group shot, center is fine
 };
 
 const HOW_IT_WORKS = [
@@ -179,6 +190,7 @@ export default function Home() {
                         src={SERVICE_IMAGES[service.slug] ?? "/images/knwn/hero-action.webp"}
                         alt={`${service.title} at KNWN`}
                         sizes="(max-width: 768px) 82vw, (max-width: 1024px) 46vw, 32vw"
+                        className={SERVICE_POSITIONS[service.slug] ?? "object-top"}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                     </div>
