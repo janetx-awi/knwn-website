@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { MediaFrame } from "@/components/site/media-frame";
@@ -61,10 +62,20 @@ const TRUST_STATS = [
   { value: "#1", label: "Elite Cheer Facility in Colorado" },
 ];
 
-function ImageBreak({ src, alt, label }: { src: string; alt: string; label: string }) {
+function ImageBreak({
+  src,
+  alt,
+  label,
+  imageClassName,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  imageClassName?: string;
+}) {
   return (
     <section className="relative h-64 overflow-hidden md:h-80">
-      <MediaFrame src={src} alt={alt} sizes="100vw" />
+      <MediaFrame src={src} alt={alt} sizes="100vw" className={imageClassName} />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative mx-auto flex h-full max-w-6xl items-center px-4">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-200">{label}</p>
@@ -216,6 +227,7 @@ export default function Home() {
           src="/images/knwn/goal-start.webp"
           alt="Athletes building confidence at KNWN training"
           label="Built for athletes who want more."
+          imageClassName="object-top"
         />
 
         {/* ── HOW IT WORKS ── */}
@@ -272,24 +284,37 @@ export default function Home() {
 
         {/* ── MERCH ── */}
         <section id="merch" className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-10">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-600">Official KNWN Gear</p>
-                <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
-                  Wear the Standard.
-                </h2>
-                <p className="max-w-md text-sm text-slate-400">
-                  KNWN apparel is built for athletes who train with intention. Shop shorts, hoodies, sports bras, and more — exclusively through our official proshop.
-                </p>
-                <p className="text-xs text-slate-600">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
+          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+            <div className="flex flex-col md:flex-row">
+              {/* Product image */}
+              <div className="relative h-64 flex-shrink-0 overflow-hidden md:h-auto md:w-72 lg:w-80">
+                <Image
+                  src="/images/knwn/knwn-hoodie.webp"
+                  alt="KNWN Brand Black Crop Hoodie"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 320px"
+                  className="object-cover object-top"
+                />
               </div>
-              <div className="flex-shrink-0">
-                <Button asChild size="lg" className="rounded-full bg-amber-600 text-white hover:bg-amber-500">
-                  <a href="https://flyathletics.com/proshops/knwn-brand/" target="_blank" rel="noreferrer">
-                    Shop KNWN Gear →
-                  </a>
-                </Button>
+              {/* Copy + CTA */}
+              <div className="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <div className="space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-600">Official KNWN Gear</p>
+                  <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
+                    Wear the Standard.
+                  </h2>
+                  <p className="max-w-md text-sm text-slate-400">
+                    KNWN apparel is built for athletes who train with intention. Shop shorts, hoodies, sports bras, and more — exclusively through our official proshop.
+                  </p>
+                  <p className="text-xs text-slate-600">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
+                </div>
+                <div>
+                  <Button asChild size="lg" className="rounded-full bg-amber-600 text-white hover:bg-amber-500">
+                    <a href="https://flyathletics.com/proshops/knwn-brand/" target="_blank" rel="noreferrer">
+                      Shop KNWN Gear →
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
