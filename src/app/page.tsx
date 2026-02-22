@@ -11,7 +11,7 @@ import { SERVICES } from "@/lib/content";
 
 // Andrew-approved photo list only — 22 photos, no others
 const SERVICE_IMAGES: Record<string, string> = {
-  "personalized-coaching":       "/images/knwn/coach-athlete-catch.jpg",   // KNWN-109: coach+athlete, 1:1 training
+  "personalized-coaching":       "/images/knwn/coach-athlete-toss.jpg",    // KNWN-107: coach+athlete, landscape, faces visible
   "semi-private-training":       "/images/knwn/group-training-floor.jpg",  // KNWN-23: group training session
   "classes-tumbling-stunting":   "/images/knwn/stunt-tower.jpg",           // KNWN-15: tower stunt, flyer elevated
   "high-school-college-pathway": "/images/knwn/athlete-smile-solo.jpg",    // KNWN-91: individual smile, aspirational
@@ -22,7 +22,7 @@ const SERVICE_IMAGES: Record<string, string> = {
 
 // Crop positions tuned per photo orientation — faces stay in the h-44 card window
 const SERVICE_POSITIONS: Record<string, string> = {
-  "personalized-coaching":       "object-bottom",  // portrait: coach face at bottom of image, athlete above
+  "personalized-coaching":       "object-center",  // landscape: coach+athlete action centered
   "semi-private-training":       "object-top",     // landscape: faces at top
   "classes-tumbling-stunting":   "object-top",     // portrait: flyer's face at top of tower
   "high-school-college-pathway": "object-center",  // landscape: face centered
@@ -54,22 +54,16 @@ const TESTIMONIALS = [
     quote: "When we got introduced to Sean at KNWN, everything changed. My daughter's skills have improved dramatically. If you truly want to see results, put your money where your mouth is and join KNWN!",
     name: "Janae",
     context: "Parent of KNWN Athlete",
-    stars: 5,
-    placeholder: false,
   },
   {
     quote: "Sean has worked with Haleigh for almost 8 years. His ability to connect with his athletes and communicate the skills he is teaching is second to none!",
     name: "Carrie",
     context: "Parent of KNWN Athlete",
-    stars: 5,
-    placeholder: false,
   },
   {
     quote: "I was really impressed how Coach Sean balanced his deep technical knowledge of tumbling with the mental side. She made more progress in a couple sessions than she had in the previous 6 months with other coaches.",
     name: "Matthew",
     context: "Parent of KNWN Athlete",
-    stars: 5,
-    placeholder: false,
   },
 ];
 
@@ -192,7 +186,7 @@ export default function Home() {
                   className="w-[82%] min-w-[82%] snap-start overflow-hidden border-slate-800 bg-slate-900/80 p-0 sm:w-[46%] sm:min-w-[46%] lg:w-[32%] lg:min-w-[32%]"
                 >
                   <Link href={`/services/${service.slug}`} className="group block">
-                    <div className="relative h-44">
+                    <div className="relative aspect-video w-full">
                       <MediaFrame
                         src={SERVICE_IMAGES[service.slug] ?? "/images/knwn/hero-action.webp"}
                         alt={`${service.title} at KNWN`}
@@ -288,13 +282,7 @@ export default function Home() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {TESTIMONIALS.map((item) => (
-              <Card
-                key={item.name + item.context}
-                className={item.placeholder
-                  ? "border-slate-800/50 bg-slate-900/30 p-6 opacity-40"
-                  : "border-slate-800 bg-slate-900/70 p-6"
-                }
-              >
+              <Card key={item.name + item.context} className="border-slate-800 bg-slate-900/70 p-6">
                 <div className="mb-4 flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-950 p-1.5">
                     <Image
@@ -305,15 +293,13 @@ export default function Home() {
                       className="h-auto w-full"
                     />
                   </div>
-                  {item.stars > 0 && (
-                    <div className="flex gap-0.5 text-amber-500 text-sm">
-                      {Array.from({ length: item.stars }).map((_, i) => (
-                        <span key={i} aria-hidden>★</span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex gap-0.5 text-amber-500 text-sm">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} aria-hidden>★</span>
+                    ))}
+                  </div>
                 </div>
-                <p className={`text-base italic leading-relaxed ${item.placeholder ? "text-slate-600" : "text-slate-200"}`}>
+                <p className="text-base italic leading-relaxed text-slate-200">
                   &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="mt-5 border-t border-slate-800 pt-4">
