@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -15,8 +16,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-black/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="font-display text-base font-extrabold tracking-[0.25em] text-white">
-          KNWN
+        <Link href="/" className="flex items-center" aria-label="KNWN Brand — Home">
+          <Image
+            src="/images/knwn/knwn-logo.jpg"
+            alt="KNWN Brand"
+            width={96}
+            height={64}
+            className="h-8 w-auto invert"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm text-slate-400 md:flex">
