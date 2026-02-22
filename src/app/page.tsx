@@ -101,12 +101,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/65" />
 
           <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10 pt-24 md:pt-28">
-            <div className="max-w-4xl space-y-6">
+            <div className="max-w-4xl xl:max-w-none space-y-6">
               <Badge className="rounded-full border border-slate-600 bg-black/50 px-4 py-1 text-slate-100">
                 Colorado&apos;s Premier Elite Cheer &amp; Stunting Facility
               </Badge>
 
-              <h1 className="font-display text-6xl font-extrabold leading-[0.88] tracking-tight text-white md:text-8xl lg:text-[9rem]">
+              <h1 className="font-display text-6xl font-extrabold leading-[0.88] tracking-tight text-white md:text-8xl lg:text-[8rem] xl:text-[9rem]">
                 GRIND TODAY.<br />KNWN TOMORROW.
               </h1>
 
