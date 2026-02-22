@@ -273,29 +273,34 @@ export default function Home() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {TESTIMONIALS.map((item) => (
-              <Card key={item.name + item.context} className="border-slate-800 bg-slate-900/70 p-6">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-950 p-1.5">
-                    <Image
-                      src="/images/knwn/knwn-logo.png"
-                      alt="KNWN Brand"
-                      width={32}
-                      height={21}
-                      className="h-auto w-full"
-                    />
-                  </div>
-                  <div className="flex gap-0.5 text-amber-500 text-sm">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} aria-hidden>★</span>
-                    ))}
-                  </div>
+              <Card key={item.name + item.context} className="relative overflow-hidden border-slate-800 bg-black p-0">
+                {/* KNWN logo watermark — large, centered, very low opacity */}
+                <div className="absolute inset-0 flex items-center justify-center p-6" aria-hidden>
+                  <Image
+                    src="/images/knwn/knwn-logo.png"
+                    alt=""
+                    width={400}
+                    height={267}
+                    className="w-full max-w-[280px] opacity-[0.10]"
+                  />
                 </div>
-                <p className="text-base italic leading-relaxed text-slate-200">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-                <div className="mt-5 border-t border-slate-800 pt-4">
-                  <p className="text-sm font-bold text-white">{item.name}</p>
-                  <p className="text-xs text-slate-500">{item.context}</p>
+                {/* Gradient overlay — darkens edges, lets logo breathe in center */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/25 to-black/80" aria-hidden />
+                {/* Content */}
+                <div className="relative z-10 flex min-h-[220px] flex-col gap-4 p-6">
+                  {/* Stars */}
+                  <div className="flex gap-0.5 text-amber-500">
+                    <span aria-label="5 stars">★★★★★</span>
+                  </div>
+                  {/* Quote */}
+                  <p className="flex-1 text-base italic leading-relaxed text-white">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
+                  {/* Name / context */}
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-sm font-bold text-white">{item.name}</p>
+                    <p className="text-xs text-slate-400">{item.context}</p>
+                  </div>
                 </div>
               </Card>
             ))}
