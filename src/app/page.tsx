@@ -20,16 +20,7 @@ const SERVICE_IMAGES: Record<string, string> = {
   "knwn-academy":                "/images/knwn/students-three.jpg",        // KNWN-112: 3 students, group portrait
 };
 
-// Crop positions tuned per photo orientation — faces stay in the h-44 card window
-const SERVICE_POSITIONS: Record<string, string> = {
-  "personalized-coaching":       "object-center",  // landscape: coach+athlete action centered
-  "semi-private-training":       "object-top",     // landscape: faces at top
-  "classes-tumbling-stunting":   "object-top",     // portrait: flyer's face at top of tower
-  "high-school-college-pathway": "object-center",  // landscape: face centered
-  "mental-performance-training": "object-top",     // portrait: face at top
-  "social-media-guidance":       "object-top",     // portrait: faces at top
-  "knwn-academy":                "object-top",     // landscape: faces at top
-};
+// All cards: object-top — faces are near the top of every approved photo
 
 const HOW_IT_WORKS = [
   {
@@ -191,7 +182,7 @@ export default function Home() {
                         src={SERVICE_IMAGES[service.slug] ?? "/images/knwn/hero-action.webp"}
                         alt={`${service.title} at KNWN`}
                         sizes="(max-width: 768px) 82vw, (max-width: 1024px) 46vw, 32vw"
-                        className={SERVICE_POSITIONS[service.slug] ?? "object-top"}
+                        className="object-top"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                     </div>
