@@ -51,24 +51,21 @@ const HOW_IT_WORKS = [
 
 const TESTIMONIALS = [
   {
-    quote:
-      "My daughter tried several coaches, gyms, and private lessons with the hopes of improving her tumbling skills. We both felt that we weren't making much progress, but did not know where else to turn. When we got introduced to Sean at KNWN, everything changed. My daughter's skills have improved dramatically. Her work ethic has also increased and her excitement about succeeding grows daily. We can't wait to see what the future holds, not just in high school but with the possibilities of college as well. If you truly want to see results, then put your money where your mouth is and join KNWN!",
+    quote: "When we got introduced to Sean at KNWN, everything changed. My daughter's skills have improved dramatically. If you truly want to see results, put your money where your mouth is and join KNWN!",
     name: "Janae",
     context: "Parent of KNWN Athlete",
     stars: 5,
     placeholder: false,
   },
   {
-    quote:
-      "Sean has worked with Haleigh for almost 8 years. His ability to connect with his athletes and communicate the skills he is teaching, is second to none! He is able to meet the athletes where they're at, challenge them to grow and help them celebrate their successes! When Johnny partnered with Sean as a stunting coach, we knew this program was something we needed to be apart of!",
+    quote: "Sean has worked with Haleigh for almost 8 years. His ability to connect with his athletes and communicate the skills he is teaching is second to none!",
     name: "Carrie",
     context: "Parent of KNWN Athlete",
     stars: 5,
     placeholder: false,
   },
   {
-    quote:
-      "I was really impressed how Coach Sean balanced his deep technical knowledge of tumbling with the mental side. He was both encouraging and challenging for our daughter. She made more progress in a couple sessions, than she had in the previous 6 months with other coaches.",
+    quote: "I was really impressed how Coach Sean balanced his deep technical knowledge of tumbling with the mental side. She made more progress in a couple sessions than she had in the previous 6 months with other coaches.",
     name: "Matthew",
     context: "Parent of KNWN Athlete",
     stars: 5,
@@ -298,13 +295,24 @@ export default function Home() {
                   : "border-slate-800 bg-slate-900/70 p-6"
                 }
               >
-                {item.stars > 0 && (
-                  <div className="mb-3 flex gap-0.5 text-amber-500">
-                    {Array.from({ length: item.stars }).map((_, i) => (
-                      <span key={i} aria-hidden>★</span>
-                    ))}
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-950 p-1.5">
+                    <Image
+                      src="/images/knwn/knwn-logo.png"
+                      alt="KNWN Brand"
+                      width={32}
+                      height={21}
+                      className="h-auto w-full"
+                    />
                   </div>
-                )}
+                  {item.stars > 0 && (
+                    <div className="flex gap-0.5 text-amber-500 text-sm">
+                      {Array.from({ length: item.stars }).map((_, i) => (
+                        <span key={i} aria-hidden>★</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <p className={`text-base italic leading-relaxed ${item.placeholder ? "text-slate-600" : "text-slate-200"}`}>
                   &ldquo;{item.quote}&rdquo;
                 </p>
