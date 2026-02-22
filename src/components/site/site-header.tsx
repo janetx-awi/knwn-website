@@ -15,19 +15,19 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-black/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-sm font-semibold tracking-[0.22em] text-white">
+        <Link href="/" className="font-display text-base font-extrabold tracking-[0.25em] text-white">
           KNWN
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-slate-400 md:flex">
           {NAV_LINKS.map((link) => (
-            <Link key={link.label} href={link.href} className="hover:text-white">
+            <Link key={link.label} href={link.href} className="hover:text-white transition-colors">
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <Button asChild size="sm" className="rounded-full bg-white text-black hover:bg-slate-200">
+        <Button asChild size="sm" className="rounded-full bg-amber-600 text-white hover:bg-amber-500">
           <Link href="/contact?intent=book-consultation">Book Now</Link>
         </Button>
       </div>

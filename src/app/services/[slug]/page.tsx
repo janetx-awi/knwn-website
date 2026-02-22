@@ -19,12 +19,17 @@ const SERVICE_HERO_IMAGES: Record<string, string> = {
   "knwn-academy": "/images/knwn/trust-athletes.webp",
 };
 
-export default function ServiceDetailPage({
+export function generateStaticParams() {
+  return SERVICES.map((service) => ({ slug: service.slug }));
+}
+
+export default async function ServiceDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const service = SERVICES.find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const service = SERVICES.find((item) => item.slug === slug);
 
   if (!service) return notFound();
 
@@ -47,10 +52,7 @@ export default function ServiceDetailPage({
               <Link href="/#services" className="inline-flex text-sm text-slate-300 hover:text-white">
                 ← Back to services
               </Link>
-              <Badge className="rounded-full border border-slate-700 bg-black/50 text-slate-100">
-                Service Detail
-              </Badge>
-              <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white md:text-6xl">
+              <h1 className="font-display max-w-4xl text-5xl font-extrabold uppercase leading-[0.88] tracking-tight text-white md:text-7xl">
                 {service.title}
               </h1>
             </div>
@@ -59,7 +61,7 @@ export default function ServiceDetailPage({
 
         <section className="mx-auto grid max-w-6xl gap-4 px-4 py-6 md:grid-cols-[1.35fr_0.9fr] md:py-10">
           <Card className="space-y-4 border-slate-800 bg-slate-900/70 p-5 md:p-6">
-            <h2 className="text-2xl font-semibold text-white">Overview</h2>
+            <h2 className="font-display text-2xl font-extrabold uppercase tracking-tight text-white md:text-3xl">Overview</h2>
 
             <p className="text-sm text-slate-300 md:text-base">{service.summary}</p>
 
@@ -70,7 +72,7 @@ export default function ServiceDetailPage({
             ))}
 
             {service.closingStatement && (
-              <p className="border-l-2 border-slate-500 pl-3 text-sm italic font-medium text-slate-100 md:text-base">
+              <p className="border-l-2 border-amber-600 pl-3 text-sm italic font-medium text-slate-100 md:text-base">
                 {service.closingStatement}
               </p>
             )}
@@ -88,12 +90,12 @@ export default function ServiceDetailPage({
           </Card>
 
           <Card className="space-y-4 border-slate-800 bg-slate-900/75 p-5 md:p-6">
-            <h2 className="text-xl font-semibold text-white">Next step</h2>
-            <p className="text-sm text-slate-300">
+            <h2 className="font-display text-xl font-extrabold uppercase tracking-tight text-white">Next Step</h2>
+            <p className="text-sm text-slate-400">
               Choose this service in the form and submit. We&apos;ll follow up with clear next steps.
             </p>
 
-            <Button asChild className="w-full rounded-full bg-white text-black hover:bg-slate-200">
+            <Button asChild className="w-full rounded-full bg-amber-600 text-white hover:bg-amber-500">
               <Link href={`/contact?intent=book-consultation&service=${service.slug}`}>Book Now</Link>
             </Button>
 
