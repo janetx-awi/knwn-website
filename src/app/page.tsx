@@ -49,21 +49,28 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const TESTIMONIAL_PLACEHOLDERS = [
+const TESTIMONIALS = [
   {
-    quote: "Real athlete stories coming. Placeholder ready for Sean's content.",
-    name: "Athlete Name",
-    context: "College Commit · Cheer",
-  },
-  {
-    quote: "Parent perspective placeholder — ready for Sean's quote.",
-    name: "Parent Name",
+    quote:
+      "My daughter tried several coaches, gyms, and private lessons with the hopes of improving her tumbling skills. We both felt that we weren't making much progress, but did not know where else to turn. When we got introduced to Sean at KNWN, everything changed. My daughter's skills have improved dramatically. Her work ethic has also increased and her excitement about succeeding grows daily. We can't wait to see what the future holds, not just in high school but with the possibilities of college as well. If you truly want to see results, then put your money where your mouth is and join KNWN!",
+    name: "Janae",
     context: "Parent of KNWN Athlete",
+    stars: 5,
+    placeholder: false,
   },
   {
-    quote: "College pathway success story — placeholder ready.",
+    quote: "— Awaiting testimonial from Sean —",
     name: "Athlete Name",
-    context: "College Pathway Graduate",
+    context: "KNWN Athlete",
+    stars: 0,
+    placeholder: true,
+  },
+  {
+    quote: "— Awaiting testimonial from Sean —",
+    name: "Athlete Name",
+    context: "KNWN Athlete",
+    stars: 0,
+    placeholder: true,
   },
 ];
 
@@ -276,15 +283,29 @@ export default function Home() {
               Athletes Speak
             </h2>
             <p className="max-w-2xl text-sm text-slate-400 md:text-base">
-              Real athlete stories coming next. Placeholder cards are ready for Sean&apos;s quotes.
+              Real results from real families.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            {TESTIMONIAL_PLACEHOLDERS.map((item) => (
-              <Card key={item.name + item.context} className="border-slate-800 bg-slate-900/70 p-6">
-                <div className="mb-4 h-10 w-10 rounded-full border border-amber-600/40 bg-slate-950" />
-                <p className="text-base italic leading-relaxed text-slate-200">&ldquo;{item.quote}&rdquo;</p>
+            {TESTIMONIALS.map((item) => (
+              <Card
+                key={item.name + item.context}
+                className={item.placeholder
+                  ? "border-slate-800/50 bg-slate-900/30 p-6 opacity-40"
+                  : "border-slate-800 bg-slate-900/70 p-6"
+                }
+              >
+                {item.stars > 0 && (
+                  <div className="mb-3 flex gap-0.5 text-amber-500">
+                    {Array.from({ length: item.stars }).map((_, i) => (
+                      <span key={i} aria-hidden>★</span>
+                    ))}
+                  </div>
+                )}
+                <p className={`text-base italic leading-relaxed ${item.placeholder ? "text-slate-600" : "text-slate-200"}`}>
+                  &ldquo;{item.quote}&rdquo;
+                </p>
                 <div className="mt-5 border-t border-slate-800 pt-4">
                   <p className="text-sm font-bold text-white">{item.name}</p>
                   <p className="text-xs text-slate-500">{item.context}</p>
