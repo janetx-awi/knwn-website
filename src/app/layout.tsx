@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
+import { VercelToolbar } from "@vercel/toolbar/next";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${barlow.variable} ${barlowCondensed.variable} font-sans min-h-screen bg-background text-foreground antialiased`}
       >
         {children}
+        <VercelToolbar />
       </body>
     </html>
   );
