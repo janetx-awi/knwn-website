@@ -43,7 +43,7 @@ export default function ContactPage({
               Contact KNWN
             </Badge>
 
-            <h1 className="font-display text-5xl font-extrabold uppercase leading-[0.9] tracking-tight text-white md:text-7xl">
+            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-5xl">
               Claim Your Spot.
             </h1>
 
