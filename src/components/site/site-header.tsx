@@ -18,11 +18,11 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center" aria-label="KNWN Brand — Home">
           <Image
-            src="/images/knwn/knwn-logo.jpg"
+            src="/images/knwn/knwn-logo.png"
             alt="KNWN Brand"
-            width={96}
-            height={64}
-            className="h-8 w-auto invert"
+            width={180}
+            height={120}
+            className="h-12 w-auto"
             priority
           />
         </Link>

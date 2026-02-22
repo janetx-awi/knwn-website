@@ -10,12 +10,12 @@ import { Card } from "@/components/ui/card";
 import { SERVICES } from "@/lib/content";
 
 const SERVICE_IMAGES: Record<string, string> = {
-  "personalized-coaching": "/images/knwn/service-intensity.webp",
+  "personalized-coaching": "/images/knwn/coach-1on1.jpg",
   "semi-private-training": "/images/knwn/goal-start.webp",
   "classes-tumbling-stunting": "/images/knwn/trust-athletes.webp",
   "high-school-college-pathway": "/images/knwn/hero-action.webp",
   "mental-performance-training": "/images/knwn/consultation-flow.webp",
-  "social-media-guidance": "/images/knwn/service-intensity.webp",
+  "social-media-guidance": "/images/knwn/coach-instruction.jpg",
   "knwn-academy": "/images/knwn/trust-athletes.webp",
 };
 
@@ -150,8 +150,8 @@ export default function Home() {
 
         {/* ── IMAGE BREAK 1 ── */}
         <ImageBreak
-          src="/images/knwn/service-intensity.webp"
-          alt="Focused hand placement and intentional reps at KNWN"
+          src="/images/knwn/stunt-action.jpg"
+          alt="KNWN athletes executing a stunt with precision"
           label="Focused reps. Intentional coaching."
         />
 
@@ -224,10 +224,9 @@ export default function Home() {
 
         {/* ── IMAGE BREAK 2 ── */}
         <ImageBreak
-          src="/images/knwn/goal-start.webp"
-          alt="Athletes building confidence at KNWN training"
+          src="/images/knwn/team-banner.jpg"
+          alt="KNWN athletes together — built for more"
           label="Built for athletes who want more."
-          imageClassName="object-top"
         />
 
         {/* ── HOW IT WORKS ── */}

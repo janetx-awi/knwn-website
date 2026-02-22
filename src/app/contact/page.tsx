@@ -37,21 +37,23 @@ export default function ContactPage({
 
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-10">
         {/* ── Contact header + form — How It Works card REMOVED per Sean's feedback ── */}
-        <section className="grid gap-5 md:grid-cols-[1fr_1.1fr] md:items-start">
-          <div className="space-y-4">
-            <Badge className="rounded-full border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100">
-              Contact KNWN
-            </Badge>
+        <section className="grid gap-5 md:grid-cols-[1fr_1.1fr] md:items-stretch">
+          <div className="flex flex-col gap-4">
+            <div className="space-y-3">
+              <Badge className="rounded-full border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100">
+                Contact KNWN
+              </Badge>
 
-            <h1 className="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-5xl">
-              Claim Your Spot.
-            </h1>
+              <h1 className="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-5xl">
+                Claim Your Spot.
+              </h1>
 
-            <p className="max-w-xl text-sm text-slate-400 md:text-base">
-              Short form. Clear next steps. Consultation spots are capped each month — submit to claim yours.
-            </p>
+              <p className="max-w-xl text-sm text-slate-400 md:text-base">
+                Short form. Clear next steps. Consultation spots are capped each month — submit to claim yours.
+              </p>
+            </div>
 
-            <Card className="relative h-52 overflow-hidden border-slate-800 bg-slate-900 p-0">
+            <Card className="relative min-h-[13rem] flex-1 overflow-hidden border-slate-800 bg-slate-900 p-0">
               <MediaFrame
                 src="/images/knwn/consultation-flow.webp"
                 alt="KNWN training consultation environment"
