@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "KNWN Brand",
+  title: "KNWN | Elite Cheer & Stunting Training — Colorado",
   description:
-    "Premium cheer and stunting training with college-journey consulting. Book a KNWN consultation.",
+    "Colorado's premier elite cheer and stunting facility. Personalized coaching, college pathway consulting, and structured development for athletes who demand more.",
 };
 
 export default function RootLayout({
@@ -26,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
+        className={`${barlow.variable} ${barlowCondensed.variable} min-h-screen bg-background text-foreground antialiased`}
       >
         {children}
       </body>

@@ -43,12 +43,12 @@ export default function ContactPage({
               Contact KNWN
             </Badge>
 
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
-              Book a consultation or learn more
+            <h1 className="font-display text-5xl font-extrabold uppercase leading-[0.9] tracking-tight text-white md:text-7xl">
+              Claim Your Spot.
             </h1>
 
-            <p className="max-w-xl text-sm text-slate-300 md:text-base">
-              Short form. Clear next steps. Premium support for athletes and families.
+            <p className="max-w-xl text-sm text-slate-400 md:text-base">
+              Short form. Clear next steps. Consultation spots are capped each month — submit to claim yours.
             </p>
 
             <Card className="relative h-52 overflow-hidden border-slate-800 bg-slate-900 p-0">
@@ -69,7 +69,7 @@ export default function ContactPage({
         {/* ── FAQ ── */}
         <section id="faq" className="mt-8">
           <div className="mb-3 flex items-center justify-between gap-3">
-            <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">FAQ</h2>
+            <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">FAQ</h2>
             <Button
               asChild
               variant="outline"

@@ -14,8 +14,8 @@ export function SiteFooter() {
     <footer className="border-t border-slate-800 bg-black">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
-          <div className="text-sm font-semibold tracking-[0.22em] text-white">KNWN</div>
-          <p className="text-sm text-slate-400">KNWN — Where Elite Athletes Become Unforgettable</p>
+          <div className="font-display text-base font-extrabold tracking-[0.25em] text-white">KNWN</div>
+          <p className="text-sm text-slate-500">Where Elite Athletes Become Unforgettable</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
