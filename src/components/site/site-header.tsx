@@ -15,14 +15,14 @@ const NAV_LINKS = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-black/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         <Link href="/" className="flex items-center" aria-label="KNWN Brand — Home">
           <Image
             src="/images/knwn/knwn-logo.png"
             alt="KNWN Brand"
-            width={180}
-            height={120}
-            className="h-12 w-auto"
+            width={360}
+            height={240}
+            className="h-20 w-auto md:h-28"
             priority
           />
         </Link>

@@ -71,7 +71,7 @@ export function ContactForm({ defaultIntent, defaultService }: ContactFormProps)
             id="intent"
             name="intent"
             required
-            className="h-10 rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
+            className="h-10 w-full rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
             defaultValue={defaultIntent ?? ""}
             onChange={(e) => setIntent(e.target.value)}
           >
@@ -88,7 +88,7 @@ export function ContactForm({ defaultIntent, defaultService }: ContactFormProps)
             id="service"
             name="service"
             required
-            className="h-10 rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
+            className="h-10 w-full rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
             defaultValue={defaultService ?? ""}
           >
             <option value="" disabled>Select a service</option>

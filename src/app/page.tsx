@@ -12,11 +12,11 @@ import { SERVICES } from "@/lib/content";
 const SERVICE_IMAGES: Record<string, string> = {
   "personalized-coaching": "/images/knwn/coach-1on1.jpg",
   "semi-private-training": "/images/knwn/goal-start.webp",
-  "classes-tumbling-stunting": "/images/knwn/trust-athletes.webp",
+  "classes-tumbling-stunting": "/images/knwn/stunt-flyer.jpg",
   "high-school-college-pathway": "/images/knwn/hero-action.webp",
   "mental-performance-training": "/images/knwn/consultation-flow.webp",
   "social-media-guidance": "/images/knwn/coach-instruction.jpg",
-  "knwn-academy": "/images/knwn/trust-athletes.webp",
+  "knwn-academy": "/images/knwn/academy-stunt.jpg",
 };
 
 const HOW_IT_WORKS = [
