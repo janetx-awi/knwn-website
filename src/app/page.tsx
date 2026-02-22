@@ -59,18 +59,20 @@ const TESTIMONIALS = [
     placeholder: false,
   },
   {
-    quote: "— Awaiting testimonial from Sean —",
-    name: "Athlete Name",
-    context: "KNWN Athlete",
-    stars: 0,
-    placeholder: true,
+    quote:
+      "Sean has worked with Haleigh for almost 8 years. His ability to connect with his athletes and communicate the skills he is teaching, is second to none! He is able to meet the athletes where they're at, challenge them to grow and help them celebrate their successes! When Johnny partnered with Sean as a stunting coach, we knew this program was something we needed to be apart of!",
+    name: "Carrie",
+    context: "Parent of KNWN Athlete",
+    stars: 5,
+    placeholder: false,
   },
   {
-    quote: "— Awaiting testimonial from Sean —",
-    name: "Athlete Name",
-    context: "KNWN Athlete",
-    stars: 0,
-    placeholder: true,
+    quote:
+      "I was really impressed how Coach Sean balanced his deep technical knowledge of tumbling with the mental side. He was both encouraging and challenging for our daughter. She made more progress in a couple sessions, than she had in the previous 6 months with other coaches.",
+    name: "Matthew",
+    context: "Parent of KNWN Athlete",
+    stars: 5,
+    placeholder: false,
   },
 ];
 
