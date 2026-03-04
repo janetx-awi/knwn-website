@@ -21,7 +21,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-slate-800 bg-black/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-zinc-800 bg-black/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1 md:py-2">
           <Link href="/" className="flex items-center" aria-label="KNWN Brand — Home">
             <Image
@@ -35,7 +35,7 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-6 text-sm text-slate-400 md:flex">
+          <nav className="hidden items-center gap-6 text-base text-zinc-200 md:flex">
             {NAV_LINKS.map((link) => (
               <Link key={link.label} href={link.href} className="transition-colors hover:text-white">
                 {link.label}
@@ -50,7 +50,7 @@ export function SiteHeader() {
             </Button>
 
             <button
-              className="flex items-center justify-center text-slate-300 hover:text-white md:hidden"
+              className="flex items-center justify-center text-zinc-300 hover:text-white md:hidden"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
@@ -74,7 +74,7 @@ export function SiteHeader() {
               <Link
                 key={`mobile-${link.label}`}
                 href={link.href}
-                className="font-display text-3xl font-extrabold uppercase tracking-tight text-white transition-colors hover:text-brand-blue"
+                className="font-display text-3xl font-extrabold uppercase tracking-tight text-white transition-colors hover:text-zinc-200"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

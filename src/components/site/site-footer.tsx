@@ -4,20 +4,20 @@ import { Instagram } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-slate-800 bg-black">
+    <footer className="border-t border-zinc-800 bg-black">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
           <Image
             src="/images/knwn/knwn-logo.png"
             alt="KNWN Brand"
-            width={120}
-            height={80}
-            className="h-10 w-auto"
+            width={200}
+            height={133}
+            className="h-16 w-auto"
           />
-          <p className="text-sm text-slate-500">Where athletes become knwn</p>
+          <p className="text-base text-zinc-300">Where athletes become knwn</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base text-zinc-300">
           <Link href="/#services" className="hover:text-white">
             Services
           </Link>
@@ -32,7 +32,7 @@ export function SiteFooter() {
           </a>
         </div>
 
-        <div className="flex items-center gap-4 text-slate-400">
+        <div className="flex items-center gap-4 text-zinc-400">
           <a
             href="https://instagram.com/the.knwnbrand"
             target="_blank"
@@ -42,7 +42,7 @@ export function SiteFooter() {
           >
             <Instagram className="h-4 w-4" />
           </a>
-          <div className="text-sm text-slate-500">© {new Date().getFullYear()} KNWN Brand. All rights reserved.</div>
+          <div className="text-base text-zinc-400">© {new Date().getFullYear()} KNWN Brand. All rights reserved.</div>
         </div>
       </div>
     </footer>

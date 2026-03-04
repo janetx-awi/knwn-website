@@ -54,14 +54,14 @@ export default function AboutPage() {
             <br />
             Serious.
           </h1>
-          <p className="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+          <p className="max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
             KNWN exists for one reason: to develop athletes who are ready to
             compete at the highest level. Not recreational. Not for everyone. For the ones who grind.
           </p>
         </section>
 
         {/* ── DIVIDER ── */}
-        <div className="border-t border-slate-800" />
+        <div className="border-t border-zinc-800" />
 
         {/* ── ORIGIN / STORY ── */}
         <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <br />
                 Exists
               </h2>
-              <div className="space-y-4 text-slate-300">
+              <div className="space-y-4 text-zinc-300">
                 <p>
                   Colorado&apos;s cheerleading landscape needed something different. A place
                   where athletes could train with structure, receive real coaching, and develop on a
@@ -92,25 +92,25 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="space-y-6">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
                 <p className="font-display mb-1 text-4xl font-black text-brand-blue">Colorado</p>
-                <p className="text-sm text-slate-400">Home base. Premier facility.</p>
+                <p className="text-sm text-zinc-400">Home base. Premier facility.</p>
               </div>
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
                 <p className="font-display mb-1 text-4xl font-black text-brand-blue">7</p>
-                <p className="text-sm text-slate-400">Specialized training programs</p>
+                <p className="text-sm text-zinc-400">Specialized training programs</p>
               </div>
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
                 <p className="font-display mb-1 text-4xl font-black text-brand-blue">Limited</p>
-                <p className="text-sm text-slate-400">Spots. Intentionally. By design.</p>
+                <p className="text-sm text-zinc-400">Spots. Intentionally. By design.</p>
               </div>
               {/* Founder photo */}
-              <div className="relative h-56 overflow-hidden rounded-2xl border border-slate-800">
+              <div className="relative h-56 overflow-hidden rounded-2xl border border-zinc-800">
                 <MediaFrame
                   src="/images/knwn/founder-portrait.jpg"
                   alt="Sean — KNWN founder and head coach"
                   sizes="(max-width: 768px) 100vw, 45vw"
-                  className="object-center"
+                  className="object-[50%_30%]"
                 />
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── DIVIDER ── */}
-        <div className="border-t border-slate-800" />
+        <div className="border-t border-zinc-800" />
 
         {/* ── VALUES ── */}
         <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
@@ -131,20 +131,20 @@ export default function AboutPage() {
             {VALUES.map((v) => (
               <div
                 key={v.number}
-                className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-3"
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 space-y-3"
               >
                 <p className="font-display text-4xl font-extrabold text-brand-blue md:text-5xl">
                   {v.number}
                 </p>
                 <h3 className="font-display text-xl font-bold uppercase text-white">{v.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{v.body}</p>
+                <p className="text-sm leading-relaxed text-zinc-400">{v.body}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── DIVIDER ── */}
-        <div className="border-t border-slate-800" />
+        <div className="border-t border-zinc-800" />
 
         {/* ── FINAL CTA ── */}
         <section className="bg-white py-16 md:py-24">
@@ -154,7 +154,7 @@ export default function AboutPage() {
               <br />
               at KNWN?
             </h2>
-            <p className="mx-auto mb-8 max-w-xl text-slate-600">
+            <p className="mx-auto mb-8 max-w-xl text-zinc-600">
               Spots are limited. Every athlete starts with a consultation so we can build the right
               training plan — not a generic one.
             </p>

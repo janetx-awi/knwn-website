@@ -49,7 +49,7 @@ export default async function ServiceDetailPage({
 
           <div className="relative mx-auto flex h-full max-w-6xl items-end px-4 pb-8">
             <div className="space-y-3">
-              <Link href="/#services" className="inline-flex text-sm text-slate-300 hover:text-white">
+              <Link href="/#services" className="inline-flex text-sm text-zinc-300 hover:text-white">
                 ← Back to services
               </Link>
               <h1 className="font-display max-w-4xl text-5xl font-extrabold uppercase leading-[0.88] tracking-tight text-white md:text-7xl">
@@ -60,38 +60,38 @@ export default async function ServiceDetailPage({
         </section>
 
         <section className="mx-auto grid max-w-6xl gap-4 px-4 py-6 md:grid-cols-[1.35fr_0.9fr] md:py-10">
-          <Card className="space-y-4 border-slate-800 bg-slate-900/70 p-5 md:p-6">
+          <Card className="space-y-4 border-zinc-800 bg-zinc-900/70 p-5 md:p-6">
             <h2 className="font-display text-2xl font-extrabold uppercase tracking-tight text-white md:text-3xl">Overview</h2>
 
-            <p className="text-sm text-slate-300 md:text-base">{service.summary}</p>
+            <p className="text-sm text-zinc-300 md:text-base">{service.summary}</p>
 
             {service.detailParagraphs?.map((paragraph, index) => (
-              <p key={`${service.slug}-detail-${index}`} className="text-sm text-slate-300 md:text-base">
+              <p key={`${service.slug}-detail-${index}`} className="text-sm text-zinc-300 md:text-base">
                 {paragraph}
               </p>
             ))}
 
             {service.closingStatement && (
-              <p className="border-l-2 border-brand-blue pl-3 text-sm italic font-medium text-slate-100 md:text-base">
+              <p className="border-l-2 border-zinc-500 pl-3 text-sm italic font-medium text-zinc-100 md:text-base">
                 {service.closingStatement}
               </p>
             )}
 
-            <p className="text-sm text-slate-300 md:text-base">This service is built for {service.bestFor}</p>
-            <p className="text-sm text-slate-300 md:text-base">
+            <p className="text-sm text-zinc-300 md:text-base">This service is built for {service.bestFor}</p>
+            <p className="text-sm text-zinc-300 md:text-base">
               It is delivered through {service.format.toLowerCase()} and focuses on {service.outcome.toLowerCase()}
             </p>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-300">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4 text-sm text-zinc-300">
               <p>
                 <span className="font-semibold text-white">Typical cadence:</span> {service.cadence}
               </p>
             </div>
           </Card>
 
-          <Card className="space-y-4 border-slate-800 bg-slate-900/75 p-5 md:p-6">
+          <Card className="space-y-4 border-zinc-800 bg-zinc-900/75 p-5 md:p-6">
             <h2 className="font-display text-xl font-extrabold uppercase tracking-tight text-white">Next Step</h2>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-zinc-400">
               Choose this service in the form and submit. We&apos;ll follow up with clear next steps.
             </p>
 
@@ -102,7 +102,7 @@ export default async function ServiceDetailPage({
             <Button
               asChild
               variant="outline"
-              className="w-full rounded-full border-slate-700 bg-transparent text-white hover:bg-slate-900"
+              className="w-full rounded-full border-zinc-700 bg-transparent text-white hover:bg-zinc-900"
             >
               <Link href="/#services">Back to services</Link>
             </Button>

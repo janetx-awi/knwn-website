@@ -81,7 +81,7 @@ function ImageBreak({
       <MediaFrame src={src} alt={alt} sizes="100vw" className={imageClassName} />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative mx-auto flex h-full max-w-6xl items-center px-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-200">{label}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-200">{label}</p>
       </div>
     </section>
   );
@@ -105,7 +105,7 @@ export default function Home() {
 
           <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10 pt-24 md:pt-28">
             <div className="max-w-4xl xl:max-w-none space-y-6">
-              <Badge className="rounded-full border border-slate-600 bg-black/50 px-4 py-1 text-slate-100">
+              <Badge className="rounded-full border border-zinc-600 bg-black/50 px-4 py-1 text-zinc-100">
                 Colorado&apos;s premier cheerleading training center
               </Badge>
 
@@ -113,7 +113,7 @@ export default function Home() {
                 GRIND TODAY.<br />KNWN TOMORROW.
               </h1>
 
-              <p className="max-w-xl text-base text-slate-300 md:text-lg">
+              <p className="max-w-xl text-base text-zinc-300 md:text-lg">
                 For Athletes &amp; Families Who Demand More Than Practice.{" "}
                 Structured progression. Intentional coaching. Exclusive monthly access.
               </p>
@@ -130,7 +130,7 @@ export default function Home() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-slate-500 bg-transparent text-white hover:bg-white/10"
+                  className="rounded-full border-zinc-500 bg-transparent text-white hover:bg-white/10"
                 >
                   <Link href="/#services">Explore Services</Link>
                 </Button>
@@ -140,12 +140,12 @@ export default function Home() {
         </section>
 
         {/* ── TRUST STRIP ── */}
-        <section className="border-y border-slate-800 bg-slate-950">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-slate-800 md:grid-cols-4 md:divide-x">
+        <section className="border-y border-zinc-800 bg-zinc-950">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-zinc-800 md:grid-cols-4 md:divide-x">
             {TRUST_STATS.map((stat) => (
-              <div key={stat.label} className="px-6 py-5 text-center [&:nth-child(n+3)]:border-t [&:nth-child(n+3)]:border-slate-800 md:[&:nth-child(n+3)]:border-t-0">
+              <div key={stat.label} className="px-6 py-5 text-center [&:nth-child(n+3)]:border-t [&:nth-child(n+3)]:border-zinc-800 md:[&:nth-child(n+3)]:border-t-0">
                 <p className="font-display text-2xl font-extrabold text-white md:text-3xl">{stat.value}</p>
-                <p className="mt-0.5 text-xs text-slate-400 md:text-sm">{stat.label}</p>
+                <p className="mt-0.5 text-xs text-zinc-400 md:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function Home() {
             <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-5xl">
               Services
             </h2>
-            <p className="max-w-3xl text-sm text-slate-400 md:text-base">
+            <p className="max-w-3xl text-sm text-zinc-400 md:text-base">
               Swipe through every service and choose the path that fits your athlete.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function Home() {
               {SERVICES.map((service) => (
                 <Card
                   key={service.slug}
-                  className="w-[82%] min-w-[82%] snap-start overflow-hidden border-slate-800 bg-slate-900/80 p-0 sm:w-[46%] sm:min-w-[46%] lg:w-[32%] lg:min-w-[32%]"
+                  className="w-[82%] min-w-[82%] snap-start overflow-hidden border-zinc-800 bg-zinc-900/80 p-0 sm:w-[46%] sm:min-w-[46%] lg:w-[32%] lg:min-w-[32%]"
                 >
                   <Link href={`/services/${service.slug}`} className="group block">
                     <div className="relative aspect-video w-full">
@@ -190,24 +190,24 @@ export default function Home() {
 
                   <div className="space-y-3 p-4">
                     <div className="flex items-start justify-between gap-2">
-                      <Link href={`/services/${service.slug}`} className="font-display text-xl font-bold text-white hover:text-slate-200">
+                      <Link href={`/services/${service.slug}`} className="font-display text-xl font-bold text-white hover:text-zinc-200">
                         {service.title}
                       </Link>
                       {service.comingSoon ? (
-                        <Badge className="rounded-full border border-slate-700 bg-slate-950 text-[10px] tracking-wide text-slate-300 hover:bg-slate-950">
+                        <Badge className="rounded-full border border-zinc-700 bg-zinc-950 text-[10px] tracking-wide text-zinc-300 hover:bg-zinc-950">
                           Coming soon
                         </Badge>
                       ) : null}
                     </div>
 
-                    <p className="line-clamp-3 text-sm text-slate-400">{service.summary}</p>
+                    <p className="line-clamp-3 text-sm text-zinc-400">{service.summary}</p>
 
                     <div className="flex flex-wrap gap-2">
                       <Button
                         asChild
                         variant="outline"
                         size="sm"
-                        className="rounded-full border-slate-700 bg-transparent text-white hover:bg-slate-800"
+                        className="rounded-full border-zinc-700 bg-transparent text-white hover:bg-zinc-800"
                       >
                         <Link href={`/services/${service.slug}`}>Learn More</Link>
                       </Button>
@@ -239,15 +239,15 @@ export default function Home() {
             How It Works
           </h2>
 
-          <div className="grid overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 md:grid-cols-3">
+          <div className="grid overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 md:grid-cols-3">
             {HOW_IT_WORKS.map((item, index) => (
               <div
                 key={item.step}
-                className={`space-y-3 p-6 ${index < HOW_IT_WORKS.length - 1 ? "border-b border-slate-800 md:border-b-0 md:border-r" : ""}`}
+                className={`space-y-3 p-6 ${index < HOW_IT_WORKS.length - 1 ? "border-b border-zinc-800 md:border-b-0 md:border-r" : ""}`}
               >
                 <p className="font-display text-4xl font-extrabold text-brand-blue md:text-5xl">{item.step}</p>
                 <h3 className="font-display text-xl font-bold text-white">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{item.description}</p>
+                <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
               </div>
             ))}
           </div>
@@ -266,14 +266,14 @@ export default function Home() {
             <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-5xl">
               Athletes Speak
             </h2>
-            <p className="max-w-2xl text-sm text-slate-400 md:text-base">
+            <p className="max-w-2xl text-sm text-zinc-400 md:text-base">
               Real results from real families.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
             {TESTIMONIALS.map((item) => (
-              <Card key={item.name + item.context} className="relative overflow-hidden border-slate-800 bg-black p-0">
+              <Card key={item.name + item.context} className="relative overflow-hidden border-zinc-800 bg-black p-0">
                 {/* KNWN logo watermark — large, centered, very low opacity */}
                 <div className="absolute inset-0 flex items-center justify-center p-6" aria-hidden>
                   <Image
@@ -299,7 +299,7 @@ export default function Home() {
                   {/* Name / context */}
                   <div className="border-t border-white/10 pt-4">
                     <p className="text-sm font-bold text-white">{item.name}</p>
-                    <p className="text-xs text-slate-400">{item.context}</p>
+                    <p className="text-xs text-zinc-400">{item.context}</p>
                   </div>
                 </div>
               </Card>
@@ -309,7 +309,7 @@ export default function Home() {
 
         {/* ── MERCH ── */}
         <section id="merch" className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60">
             <div className="flex flex-col md:flex-row">
               {/* Product image */}
               <div className="relative h-64 flex-shrink-0 overflow-hidden md:h-auto md:w-72 lg:w-80">
@@ -328,10 +328,10 @@ export default function Home() {
                   <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
                     Wear the Standard.
                   </h2>
-                  <p className="max-w-md text-sm text-slate-400">
+                  <p className="max-w-md text-sm text-zinc-400">
                     KNWN apparel is built for athletes who train with intention. Shop shorts, hoodies, sports bras, and more — exclusively through our official proshop.
                   </p>
-                  <p className="text-xs text-slate-600">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
+                  <p className="text-xs text-zinc-600">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
                 </div>
                 <div>
                   <Button asChild size="lg" className="rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover">
@@ -346,15 +346,15 @@ export default function Home() {
         </section>
 
         {/* ── FINAL CTA — full-width bold section ── */}
-        <section className="border-t border-slate-800 bg-slate-950 px-4 py-16 text-center md:py-24">
+        <section className="border-t border-zinc-800 bg-zinc-950 px-4 py-16 text-center md:py-24">
           <div className="mx-auto max-w-4xl space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">Limited Monthly Access</p>
             <h2 className="font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-tight text-white md:text-6xl lg:text-7xl">
               Are You Ready<br />to Be KNWN?
             </h2>
-            <p className="mx-auto max-w-xl text-base text-slate-400 md:text-lg">
+            <p className="mx-auto max-w-xl text-base text-zinc-400 md:text-lg">
               Elite results require elite focus. Consultation spots are intentionally capped.{" "}
-              <span className="text-slate-300">Become Seen. Become Sought. Become KNWN.</span>
+              <span className="text-zinc-300">Become Seen. Become Sought. Become KNWN.</span>
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Button
@@ -368,7 +368,7 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-slate-700 bg-transparent text-white hover:bg-white/10"
+                className="rounded-full border-zinc-700 bg-transparent text-white hover:bg-white/10"
               >
                 <Link href="/#services">View All Services</Link>
               </Button>
