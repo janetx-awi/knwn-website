@@ -110,7 +110,7 @@ export default function AboutPage() {
                   src="/images/knwn/founder-portrait.jpg"
                   alt="Sean — KNWN founder and head coach"
                   sizes="(max-width: 768px) 100vw, 45vw"
-                  className="object-[50%_30%]"
+                  className="[object-position:50%_30%]"
                 />
               </div>
             </div>
