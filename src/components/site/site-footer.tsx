@@ -14,7 +14,7 @@ export function SiteFooter() {
             height={80}
             className="h-10 w-auto"
           />
-          <p className="text-sm text-slate-500">Where Elite Athletes Become Unforgettable</p>
+          <p className="text-sm text-slate-500">Where athletes become knwn</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">

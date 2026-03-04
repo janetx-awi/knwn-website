@@ -45,7 +45,7 @@ export function SiteHeader() {
 
           {/* Right side: Book Now + hamburger */}
           <div className="flex items-center gap-3">
-            <Button asChild size="sm" className="rounded-full bg-amber-600 text-white hover:bg-amber-500">
+            <Button asChild size="sm" className="rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover">
               <Link href="/contact?intent=book-consultation">Book Now</Link>
             </Button>
 
@@ -74,7 +74,7 @@ export function SiteHeader() {
               <Link
                 key={`mobile-${link.label}`}
                 href={link.href}
-                className="font-display text-3xl font-extrabold uppercase tracking-tight text-white transition-colors hover:text-amber-500"
+                className="font-display text-3xl font-extrabold uppercase tracking-tight text-white transition-colors hover:text-brand-blue"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -84,7 +84,7 @@ export function SiteHeader() {
             <Button
               asChild
               size="lg"
-              className="mt-4 rounded-full bg-amber-600 px-10 text-white hover:bg-amber-500"
+              className="mt-4 rounded-full bg-brand-blue px-10 text-white hover:bg-brand-blue-hover"
             >
               <Link href="/contact?intent=book-consultation" onClick={() => setMenuOpen(false)}>
                 Book Now

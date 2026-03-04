@@ -59,10 +59,10 @@ const TESTIMONIALS = [
 ];
 
 const TRUST_STATS = [
-  { value: "500+", label: "Athletes Trained" },
-  { value: "50+", label: "College Placements" },
+  { value: "Thousands", label: "Athletes Trained" },
+  { value: "100+", label: "College Placements" },
   { value: "7", label: "Service Tracks" },
-  { value: "#1", label: "Elite Cheer Facility in Colorado" },
+  { value: "#1", label: "Premier Cheerleading Training Center in Colorado" },
 ];
 
 function ImageBreak({
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10 pt-24 md:pt-28">
             <div className="max-w-4xl xl:max-w-none space-y-6">
               <Badge className="rounded-full border border-slate-600 bg-black/50 px-4 py-1 text-slate-100">
-                Colorado&apos;s Premier Elite Cheer &amp; Stunting Facility
+                Colorado&apos;s premier cheerleading training center
               </Badge>
 
               <h1 className="font-display text-6xl font-extrabold leading-[0.88] tracking-tight text-white md:text-8xl lg:text-[8rem] xl:text-[9rem]">
@@ -122,7 +122,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-full bg-amber-600 text-white hover:bg-amber-500"
+                  className="rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover"
                 >
                   <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
                 </Button>
@@ -214,7 +214,7 @@ export default function Home() {
                       <Button
                         asChild
                         size="sm"
-                        className="rounded-full bg-amber-600 text-white hover:bg-amber-500"
+                        className="rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover"
                       >
                         <Link href={`/contact?intent=book-consultation&service=${service.slug}`}>Book Now</Link>
                       </Button>
@@ -245,7 +245,7 @@ export default function Home() {
                 key={item.step}
                 className={`space-y-3 p-6 ${index < HOW_IT_WORKS.length - 1 ? "border-b border-slate-800 md:border-b-0 md:border-r" : ""}`}
               >
-                <p className="font-display text-4xl font-extrabold text-amber-600 md:text-5xl">{item.step}</p>
+                <p className="font-display text-4xl font-extrabold text-brand-blue md:text-5xl">{item.step}</p>
                 <h3 className="font-display text-xl font-bold text-white">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-slate-400">{item.description}</p>
               </div>
@@ -289,7 +289,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="relative z-10 flex min-h-[220px] flex-col gap-4 p-6">
                   {/* Stars */}
-                  <div className="flex gap-0.5 text-amber-500">
+                  <div className="flex gap-0.5 text-brand-blue">
                     <span aria-label="5 stars">★★★★★</span>
                   </div>
                   {/* Quote */}
@@ -324,7 +324,7 @@ export default function Home() {
               {/* Copy + CTA */}
               <div className="flex flex-col justify-center gap-4 p-6 md:p-10">
                 <div className="space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-600">Official KNWN Gear</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-blue">Official KNWN Gear</p>
                   <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white md:text-4xl">
                     Wear the Standard.
                   </h2>
@@ -334,7 +334,7 @@ export default function Home() {
                   <p className="text-xs text-slate-600">Fulfilled by Fly Athletics. Ships in 4–6 weeks.</p>
                 </div>
                 <div>
-                  <Button asChild size="lg" className="rounded-full bg-amber-600 text-white hover:bg-amber-500">
+                  <Button asChild size="lg" className="rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover">
                     <a href="https://flyathletics.com/proshops/knwn-brand/" target="_blank" rel="noreferrer">
                       Shop KNWN Gear →
                     </a>
@@ -348,7 +348,7 @@ export default function Home() {
         {/* ── FINAL CTA — full-width bold section ── */}
         <section className="border-t border-slate-800 bg-slate-950 px-4 py-16 text-center md:py-24">
           <div className="mx-auto max-w-4xl space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-600">Limited Monthly Access</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">Limited Monthly Access</p>
             <h2 className="font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-tight text-white md:text-6xl lg:text-7xl">
               Are You Ready<br />to Be KNWN?
             </h2>
@@ -360,7 +360,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-amber-600 px-8 text-white hover:bg-amber-500"
+                className="rounded-full bg-brand-blue px-8 text-white hover:bg-brand-blue-hover"
               >
                 <Link href="/contact?intent=book-consultation">Claim Your Consult</Link>
               </Button>

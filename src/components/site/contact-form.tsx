@@ -98,8 +98,21 @@ export function ContactForm({ defaultIntent, defaultService }: ContactFormProps)
           </select>
         </div>
         <div className="grid gap-2">
-          <label className="text-sm font-medium text-slate-200" htmlFor="skill-level">Skill Level</label>
-          <Input id="skill-level" name="skillLevel" placeholder="Beginner, intermediate, advanced" required className={fieldClassName} />
+          <label className="text-sm font-medium text-slate-200" htmlFor="sport">Sport</label>
+          <select
+            id="sport"
+            name="sport"
+            required
+            className="h-10 w-full rounded-md border border-slate-700 bg-slate-950/80 px-3 text-sm text-white outline-none focus:border-slate-500 focus:ring-2 focus:ring-white/20"
+          >
+            <option value="" disabled>Select a sport</option>
+            <option value="cheer">Cheer</option>
+            <option value="gymnastics">Gymnastics</option>
+            <option value="poms">Poms</option>
+            <option value="dance">Dance</option>
+            <option value="parkour">Parkour</option>
+            <option value="tricking">Tricking</option>
+          </select>
         </div>
       </div>
       <div className="grid gap-2">

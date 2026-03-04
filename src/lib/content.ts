@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "classes-tumbling-stunting",
-    title: "Classes: Tumbling + Stunting",
+    title: "Curated Classes",
     summary:
       "Small Classes. Big Skills. Maximum Attention. Structured progressions for every level.",
     bestFor: "Athletes building fundamentals or advancing to higher-level tumbling and stunting skills.",

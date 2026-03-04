@@ -43,3 +43,6 @@ next-env.d.ts
 # Python cache
 __pycache__/
 *.pyc
+
+# Design review assets (not for deployment)
+03032026 KNWN Site Edits/

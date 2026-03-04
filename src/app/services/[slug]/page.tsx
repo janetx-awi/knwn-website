@@ -72,7 +72,7 @@ export default async function ServiceDetailPage({
             ))}
 
             {service.closingStatement && (
-              <p className="border-l-2 border-amber-600 pl-3 text-sm italic font-medium text-slate-100 md:text-base">
+              <p className="border-l-2 border-brand-blue pl-3 text-sm italic font-medium text-slate-100 md:text-base">
                 {service.closingStatement}
               </p>
             )}
@@ -95,7 +95,7 @@ export default async function ServiceDetailPage({
               Choose this service in the form and submit. We&apos;ll follow up with clear next steps.
             </p>
 
-            <Button asChild className="w-full rounded-full bg-amber-600 text-white hover:bg-amber-500">
+            <Button asChild className="w-full rounded-full bg-brand-blue text-white hover:bg-brand-blue-hover">
               <Link href={`/contact?intent=book-consultation&service=${service.slug}`}>Book Now</Link>
             </Button>
 
