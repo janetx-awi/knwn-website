@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { href: "/#merch", label: "Merch" },
   { href: "/contact", label: "Contact" },
   { href: "/contact#faq", label: "FAQ" },
+  { href: "/signin", label: "Sign In" },
 ];
 
 export function SiteHeader() {

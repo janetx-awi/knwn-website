@@ -27,6 +27,9 @@ export function SiteFooter() {
           <Link href="/contact#faq" className="hover:text-white">
             FAQ
           </Link>
+          <Link href="/signin" className="hover:text-white">
+            Sign In
+          </Link>
           <a href="mailto:info@knwnbrand.com" className="hover:text-white">
             info@knwnbrand.com
           </a>
