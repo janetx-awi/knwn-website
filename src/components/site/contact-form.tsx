@@ -29,15 +29,41 @@ export function ContactForm({ defaultIntent, defaultService }: ContactFormProps)
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      intent: (form.elements.namedItem("intent") as HTMLSelectElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      sport: (form.elements.namedItem("sport") as HTMLSelectElement).value,
+      referralSource: (form.elements.namedItem("referralSource") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    // Send emails via API
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    } catch {
+      // non-fatal — form still marks as submitted
+    }
+
+    // Decrement consultation spots if booking
     if (intent === "book-consultation") {
       try {
         const res = await fetch("/api/consultation-spots", { method: "POST" });
-        const data: { spots: number } = await res.json();
-        setSpots(data.spots);
+        const spotsData: { spots: number } = await res.json();
+        setSpots(spotsData.spots);
       } catch {
         // non-fatal
       }
     }
+
     setStatus("submitted");
   };
 
