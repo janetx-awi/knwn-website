@@ -1,4 +1,4 @@
-import { kv } from "@vercel/kv";
+import Redis from "ioredis";
 import { NextResponse } from "next/server";
 
 const MAX_SPOTS = parseInt(process.env.CONSULTATION_MAX_SPOTS ?? "8", 10);
@@ -10,17 +10,32 @@ function currentMonthKey() {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 }
 
+async function withRedis<T>(fn: (redis: Redis) => Promise<T>): Promise<T | null> {
+  const url = process.env.knwn_kv_REDIS_URL;
+  if (!url) return null;
+  const redis = new Redis(url, { lazyConnect: true, enableOfflineQueue: false });
+  try {
+    await redis.connect();
+    return await fn(redis);
+  } finally {
+    redis.disconnect();
+  }
+}
+
 export async function GET() {
   try {
-    const storedMonth = await kv.get<string>(MONTH_KEY);
-    const thisMonth = currentMonthKey();
-    if (storedMonth !== thisMonth) {
-      await kv.set(SPOTS_KEY, MAX_SPOTS);
-      await kv.set(MONTH_KEY, thisMonth);
-      return NextResponse.json({ spots: MAX_SPOTS });
-    }
-    const spots = await kv.get<number>(SPOTS_KEY);
-    return NextResponse.json({ spots: spots ?? MAX_SPOTS });
+    const result = await withRedis(async (redis) => {
+      const storedMonth = await redis.get(MONTH_KEY);
+      const thisMonth = currentMonthKey();
+      if (storedMonth !== thisMonth) {
+        await redis.set(SPOTS_KEY, MAX_SPOTS);
+        await redis.set(MONTH_KEY, thisMonth);
+        return MAX_SPOTS;
+      }
+      const spots = await redis.get(SPOTS_KEY);
+      return spots !== null ? parseInt(spots, 10) : MAX_SPOTS;
+    });
+    return NextResponse.json({ spots: result ?? MAX_SPOTS });
   } catch {
     return NextResponse.json({ spots: MAX_SPOTS });
   }
@@ -28,17 +43,20 @@ export async function GET() {
 
 export async function POST() {
   try {
-    const storedMonth = await kv.get<string>(MONTH_KEY);
-    const thisMonth = currentMonthKey();
-    if (storedMonth !== thisMonth) {
-      await kv.set(SPOTS_KEY, MAX_SPOTS - 1);
-      await kv.set(MONTH_KEY, thisMonth);
-      return NextResponse.json({ spots: MAX_SPOTS - 1 });
-    }
-    const current = (await kv.get<number>(SPOTS_KEY)) ?? MAX_SPOTS;
-    const updated = Math.max(0, current - 1);
-    await kv.set(SPOTS_KEY, updated);
-    return NextResponse.json({ spots: updated });
+    const result = await withRedis(async (redis) => {
+      const storedMonth = await redis.get(MONTH_KEY);
+      const thisMonth = currentMonthKey();
+      if (storedMonth !== thisMonth) {
+        await redis.set(SPOTS_KEY, MAX_SPOTS - 1);
+        await redis.set(MONTH_KEY, thisMonth);
+        return MAX_SPOTS - 1;
+      }
+      const current = await redis.get(SPOTS_KEY);
+      const updated = Math.max(0, (current !== null ? parseInt(current, 10) : MAX_SPOTS) - 1);
+      await redis.set(SPOTS_KEY, updated);
+      return updated;
+    });
+    return NextResponse.json({ spots: result ?? MAX_SPOTS });
   } catch {
     return NextResponse.json({ spots: MAX_SPOTS });
   }
