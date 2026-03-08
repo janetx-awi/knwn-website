@@ -18,9 +18,9 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "KNWN | Elite Cheer & Stunting Training — Colorado",
+  title: "KNWN | Colorado's Premier Cheerleading Training Center",
   description:
-    "Colorado's premier elite cheer and stunting facility. Personalized coaching, college pathway consulting, and structured development for athletes who demand more.",
+    "Colorado's premier cheerleading training center. Personalized coaching, college pathway consulting, and structured development for athletes who demand more.",
 };
 
 export default function RootLayout({
